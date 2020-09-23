@@ -1,0 +1,69 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="600.0" prefWidth="600.0"
+            xmlns="http://javafx.com/javafx/8.0.171"
+            xmlns:fx="http://javafx.com/fxml/1"
+            fx:controller="sample.DetailRoom">
+   <children>
+      <Label layoutX="219.0" layoutY="63.0" lineSpacing="4.0" text="ข้อมูลผู้พักอาศัย" textAlignment="CENTER">
+         <font>
+            <Font name="Chonburi" size="20.0" />
+         </font>
+      </Label>
+      <Button layoutX="531.0" layoutY="563.0" mnemonicParsing="false" text="ลงชื่อออก">
+         <font>
+            <Font name="FC Active Light Italic" size="13.0" />
+         </font>
+      </Button>
+      <TableView fx:id="studentsTable" layoutX="68.0" layoutY="179.0" prefHeight="306.0" prefWidth="464.0" />
+      <Button layoutX="14.0" layoutY="563.0" mnemonicParsing="false" text="ย้อนกลับ">
+         <font>
+            <Font name="FC Active Light Italic" size="13.0" />
+         </font>
+      </Button>
+      <Label layoutX="68.0" layoutY="110.0" text="ค้นหาห้องจากหมายเลขห้อง :">
+         <font>
+            <Font name="FC Active Light Italic" size="15.0" />
+         </font>
+      </Label>
+      <Button layoutX="68.0" layoutY="494.0" mnemonicParsing="false" text="สร้างข้อมูลผู้พักอาศัยใหม่">
+         <font>
+            <Font name="FC Active Light Italic" size="13.0" />
+         </font>
+      </Button>
+      <Label layoutX="67.0" layoutY="146.0" text="ค้นหาห้องจากชื่อผู้พักอาศัย :">
+         <font>
+            <Font name="FC Active Light Italic" size="15.0" />
+         </font>
+      </Label>
+      <TextField layoutX="196.0" layoutY="107.0" prefHeight="25.0" prefWidth="102.0" promptText="room number" />
+      <TextField layoutX="196.0" layoutY="141.0" prefHeight="25.0" prefWidth="102.0" promptText="guest name" />
+      <Button layoutX="307.0" layoutY="107.0" mnemonicParsing="false" text="ค้นหา">
+         <font>
+            <Font name="FC Active Light Italic" size="13.0" />
+         </font>
+      </Button>
+      <Button layoutX="307.0" layoutY="143.0" mnemonicParsing="false" text="ค้นหา">
+         <font>
+            <Font name="FC Active Light Italic" size="13.0" />
+         </font>
+      </Button>
+      <Button layoutX="411.0" layoutY="229.0" mnemonicParsing="false" text="รายละเอียด">
+         <font>
+            <Font name="FC Active Light Italic" size="13.0" />
+         </font>
+      </Button>
+      <Button layoutX="484.0" layoutY="229.0" mnemonicParsing="false" text="ลบ">
+         <font>
+            <Font name="FC Active Light Italic" size="13.0" />
+         </font>
+      </Button>
+   </children>
+</AnchorPane>

@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
+
+
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="600.0" prefWidth="600.0"
+            xmlns="http://javafx.com/javafx/8.0.171"
+            xmlns:fx="http://javafx.com/fxml/1"
+            fx:controller="sample.LoginSuccessGuest">
+   <children>
+      <Label layoutX="233.0" layoutY="80.0" lineSpacing="4.0" text="ชื่อผู้พักอาศัย" textAlignment="CENTER">
+         <font>
+            <Font name="Chonburi" size="20.0" />
+         </font>
+      </Label>
+      <Button layoutX="531.0" layoutY="563.0" mnemonicParsing="false" text="ลงชื่อออก">
+         <font>
+            <Font name="FC Active Light Italic" size="13.0" />
+         </font>
+      </Button>
+      <Label layoutX="271.0" layoutY="332.0" lineSpacing="4.0" text="username" textAlignment="CENTER">
+         <font>
+            <Font name="FC Active Light Italic" size="18.0" />
+         </font>
+      </Label>
+      <ImageView fitHeight="150.0" fitWidth="200.0" layoutX="239.0" layoutY="150.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="sample" />
+         </image>
+      </ImageView>
+      <Label layoutX="268.0" layoutY="361.0" lineSpacing="4.0" text="ชื่อ-นามสกุล" textAlignment="CENTER">
+         <font>
+            <Font name="FC Active Light Italic" size="18.0" />
+         </font>
+      </Label>
+      <Label layoutX="262.0" layoutY="388.0" lineSpacing="4.0" text="เปลี่ยนรหัสผ่าน" textAlignment="CENTER">
+         <font>
+            <Font name="FC Active Light Italic" size="18.0" />
+         </font>
+      </Label>
+      <Button layoutX="228.0" layoutY="420.0" mnemonicParsing="false" text="ระบบจัดการจดหมาย/เอกสาร/พัสดุ">
+         <font>
+            <Font name="FC Active Light Italic" size="13.0" />
+         </font>
+      </Button>
+   </children>
+</AnchorPane>
