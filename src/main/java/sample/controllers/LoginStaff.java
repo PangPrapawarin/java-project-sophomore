@@ -1,4 +1,4 @@
-package sample;
+package sample.controllers;
 
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
@@ -12,20 +12,28 @@ import javafx.stage.Stage;
 
 import java.io.IOException;
 
-public class LoginGuest {
-    @FXML
-    private TextField usernameField;
+public class LoginStaff {
+    @FXML private TextField usernameField;
     @FXML private PasswordField passwordField;
-    @FXML private Button loginGuestButton;
+    @FXML private Button loginStaffButton;
     @FXML private Label forgetPassword;
 
     @FXML public void handleLoginStaffButton(ActionEvent event) throws IOException {
         Button b = (Button) event.getSource();
         Stage stage = (Stage) b.getScene().getWindow();
-        FXMLLoader loader = new FXMLLoader(getClass().getResource("/me/login_success_guest.fxml"));
+        FXMLLoader loader = new FXMLLoader(getClass().getResource("/me/login_success_staff.fxml"));
 
         stage.setScene(new Scene(loader.load(),600,600));
-        PopUpRecommend l = loader.getController();
+        LoginSuccessStaff l = loader.getController();
+        stage.show();
+    }
+    @FXML public void handleForgetPasswordLabel(ActionEvent event) throws IOException {
+        Label b = (Label) event.getSource();
+        Stage stage = (Stage) b.getScene().getWindow();
+        FXMLLoader loader = new FXMLLoader(getClass().getResource("/me/..."));
+
+        stage.setScene(new Scene(loader.load(),500,500));
+        //... l = loader.getController();
         stage.show();
     }
 }

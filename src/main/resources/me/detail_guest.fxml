@@ -10,24 +10,24 @@
 <AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="600.0" prefWidth="600.0"
             xmlns="http://javafx.com/javafx/8.0.171"
             xmlns:fx="http://javafx.com/fxml/1"
-            fx:controller="sample.DetailGuest">
+            fx:controller="sample.controllers.DetailGuest">
    <children>
       <Label layoutX="191.0" layoutY="73.0" lineSpacing="4.0" text="รายละเอียดผู้พักอาศัย" textAlignment="CENTER">
          <font>
             <Font name="Chonburi" size="20.0" />
          </font>
       </Label>
-      <Button layoutX="14.0" layoutY="563.0" mnemonicParsing="false" text="ย้อนกลับ">
+      <Button fx:id="previousButton" layoutX="14.0" layoutY="563.0" mnemonicParsing="false" onAction="#handlePreviousButton" text="ย้อนกลับ">
          <font>
             <Font name="FC Active Light Italic" size="13.0" />
          </font>
       </Button>
-      <Button layoutX="531.0" layoutY="563.0" mnemonicParsing="false" text="ลงชื่อออก">
+      <Button fx:id="logoutButton" layoutX="531.0" layoutY="563.0" mnemonicParsing="false" onAction="#handleLogoutButton" text="ลงชื่อออก">
          <font>
             <Font name="FC Active Light Italic" size="13.0" />
          </font>
       </Button>
-      <ImageView fitHeight="150.0" fitWidth="200.0" layoutX="108.0" layoutY="180.0" pickOnBounds="true" preserveRatio="true">
+      <ImageView fx:id="photo" fitHeight="150.0" fitWidth="200.0" layoutX="108.0" layoutY="180.0" pickOnBounds="true" preserveRatio="true">
          <image>
             <Image url="sample" />
          </image>
@@ -67,37 +67,37 @@
             <Font name="FC Active Light Italic" size="16.0" />
          </font>
       </Label>
-      <Label layoutX="353.0" layoutY="172.0" text="room number">
+      <Label fx:id="roomNumber" layoutX="353.0" layoutY="172.0" text="room number">
          <font>
             <Font name="FC Active Light Italic" size="16.0" />
          </font>
       </Label>
-      <Label layoutX="353.0" layoutY="214.0" text="floor number">
+      <Label fx:id="floorNumber" layoutX="353.0" layoutY="214.0" text="floor number">
          <font>
             <Font name="FC Active Light Italic" size="16.0" />
          </font>
       </Label>
-      <Label layoutX="353.0" layoutY="255.0" text="buliding number">
+      <Label fx:id="buildingNumber" layoutX="353.0" layoutY="255.0" text="building number">
          <font>
             <Font name="FC Active Light Italic" size="16.0" />
          </font>
       </Label>
-      <Label layoutX="353.0" layoutY="295.0" text="room type">
+      <Label fx:id="roomType" layoutX="353.0" layoutY="295.0" text="room type">
          <font>
             <Font name="FC Active Light Italic" size="16.0" />
          </font>
       </Label>
-      <Label layoutX="352.0" layoutY="334.0" text="date">
+      <Label fx:id="date" layoutX="352.0" layoutY="334.0" text="date">
          <font>
             <Font name="FC Active Light Italic" size="16.0" />
          </font>
       </Label>
-      <Label layoutX="353.0" layoutY="373.0" text="number of guest(s)">
+      <Label fx:id="numberOfGuest" layoutX="353.0" layoutY="373.0" text="number of guest(s)">
          <font>
             <Font name="FC Active Light Italic" size="16.0" />
          </font>
       </Label>
-      <Label layoutX="353.0" layoutY="412.0" text="guest name">
+      <Label fx:id="guestName" layoutX="353.0" layoutY="412.0" text="guest name">
          <font>
             <Font name="FC Active Light Italic" size="16.0" />
          </font>

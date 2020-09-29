@@ -8,49 +8,45 @@
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.text.Font?>
 
-
-<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="600.0" prefWidth="600.0"
-            xmlns="http://javafx.com/javafx/8.0.171"
-            xmlns:fx="http://javafx.com/fxml/1"
-            fx:controller="sample.LoginSuccessStaff">
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="600.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="sample.controllers.LoginSuccessStaff">
    <children>
-      <Label layoutX="345.0" layoutY="89.0" lineSpacing="4.0" text="ชื่อเจ้าหน้าที่ส่วนกลาง" textAlignment="CENTER">
+      <Label layoutX="359.0" layoutY="90.0" lineSpacing="4.0" text="เจ้าหน้าที่ส่วนกลาง" textAlignment="CENTER">
          <font>
             <Font name="Chonburi" size="20.0" />
          </font>
       </Label>
-      <Button layoutX="531.0" layoutY="563.0" mnemonicParsing="false" text="ลงชื่อออก">
+      <Button fx:id="logoutButton" layoutX="531.0" layoutY="563.0" mnemonicParsing="false" onAction="#handleLogoutButton" text="ลงชื่อออก">
          <font>
             <Font name="FC Active Light Italic" size="13.0" />
          </font>
       </Button>
-      <Label layoutX="423.0" layoutY="328.0" lineSpacing="4.0" text="username" textAlignment="CENTER">
+      <Label fx:id="username" layoutX="423.0" layoutY="328.0" lineSpacing="4.0" text="username" textAlignment="CENTER">
          <font>
             <Font name="FC Active Light Italic" size="18.0" />
          </font>
       </Label>
-      <ImageView fitHeight="150.0" fitWidth="200.0" layoutX="391.0" layoutY="146.0" pickOnBounds="true" preserveRatio="true">
+      <ImageView fx:id="photo" fitHeight="150.0" fitWidth="200.0" layoutX="391.0" layoutY="146.0" pickOnBounds="true" preserveRatio="true">
          <image>
             <Image url="sample" />
          </image>
       </ImageView>
-      <Label layoutX="420.0" layoutY="357.0" lineSpacing="4.0" text="ชื่อ-นามสกุล" textAlignment="CENTER">
+      <Label fx:id="name" layoutX="420.0" layoutY="357.0" lineSpacing="4.0" text="ชื่อ-นามสกุล" textAlignment="CENTER">
          <font>
             <Font name="FC Active Light Italic" size="18.0" />
          </font>
       </Label>
-      <Label layoutX="414.0" layoutY="384.0" lineSpacing="4.0" text="เปลี่ยนรหัสผ่าน" textAlignment="CENTER">
+      <Label fx:id="changePassword" layoutX="414.0" layoutY="384.0" lineSpacing="4.0" onMouseClicked="#handleChangePasswordLabel" text="เปลี่ยนรหัสผ่าน" textAlignment="CENTER">
          <font>
             <Font name="FC Active Light Italic" size="18.0" />
          </font>
       </Label>
-      <TableView fx:id="studentsTable" layoutX="30.0" layoutY="81.0" prefHeight="403.0" prefWidth="283.0" />
-      <Button layoutX="65.0" layoutY="497.0" mnemonicParsing="false" text="ข้อมูลผู้อาศัย">
+      <TableView fx:id="timeInfoStaffTable" layoutX="30.0" layoutY="81.0" prefHeight="403.0" prefWidth="283.0" />
+      <Button fx:id="detailGuestButton" layoutX="65.0" layoutY="497.0" mnemonicParsing="false" onAction="#handleDetailGuestButton" text="ข้อมูลผู้อาศัย">
          <font>
             <Font name="FC Active Light Italic" size="13.0" />
          </font>
       </Button>
-      <Button layoutX="152.0" layoutY="497.0" mnemonicParsing="false" text="จัดการจดหมาย/เอกสาร/พัสดุ">
+      <Button fx:id="manageButton" layoutX="152.0" layoutY="497.0" mnemonicParsing="false" onAction="#handleManageButton" text="จัดการจดหมาย/เอกสาร/พัสดุ">
          <font>
             <Font name="FC Active Light Italic" size="13.0" />
          </font>

@@ -7,18 +7,14 @@
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.text.Font?>
 
-
-<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="600.0" prefWidth="600.0"
-            xmlns="http://javafx.com/javafx/8.0.171"
-            xmlns:fx="http://javafx.com/fxml/1"
-            fx:controller="sample.RegisterGuest">
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="600.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="sample.controllers.RegisterGuest">
    <children>
       <Label layoutX="216.0" layoutY="121.0" lineSpacing="7.0" text="สร้างบัญชีใหม่&#10;สำหรับผู้พักอาศัย" textAlignment="CENTER">
          <font>
             <Font name="Chonburi" size="20.0" />
          </font>
       </Label>
-      <Button layoutX="222.0" layoutY="393.0" mnemonicParsing="false" text="ย้อนกลับ">
+      <Button fx:id="previousButton" layoutX="222.0" layoutY="393.0" mnemonicParsing="false" onAction="#handlePreviousButton" text="ย้อนกลับ">
          <font>
             <Font name="FC Active Light Italic" size="14.0" />
          </font>
@@ -33,15 +29,15 @@
             <Font name="FC Active Light Italic" size="16.0" />
          </font>
       </Label>
-      <TextField layoutX="253.0" layoutY="243.0" promptText="username" />
-      <PasswordField layoutX="253.0" layoutY="286.0" promptText="password" />
+      <TextField fx:id="usernameField" layoutX="253.0" layoutY="243.0" promptText="username" />
+      <PasswordField fx:id="passwordField" layoutX="253.0" layoutY="286.0" promptText="password" />
       <Label layoutX="173.0" layoutY="331.0" text="ยืนยันรหัสผ่าน :">
          <font>
             <Font name="FC Active Light Italic" size="16.0" />
          </font>
       </Label>
-      <PasswordField layoutX="253.0" layoutY="327.0" promptText="confirm password" />
-      <Button layoutX="303.0" layoutY="393.0" mnemonicParsing="false" text="สร้างบัญชีใหม่">
+      <PasswordField fx:id="confirmPasswordField" layoutX="253.0" layoutY="327.0" promptText="confirm password" />
+      <Button fx:id="newAccountButton" layoutX="303.0" layoutY="393.0" mnemonicParsing="false" onAction="#handleNewAccountButton" text="สร้างบัญชีใหม่">
          <font>
             <Font name="FC Active Light Italic" size="14.0" />
          </font>

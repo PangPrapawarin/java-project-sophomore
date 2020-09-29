@@ -1,4 +1,4 @@
-package sample;
+package sample.controllers;
 
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
@@ -18,7 +18,7 @@ public class PopUpRecommend {
         FXMLLoader loader = new FXMLLoader(getClass().getResource("/me/Home.fxml"));
 
         stage.setScene(new Scene(loader.load(),600,600));
-        LoginStaff l = loader.getController();
+        Home l = loader.getController();
         stage.show();
     }
 }

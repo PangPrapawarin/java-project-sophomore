@@ -1,4 +1,4 @@
-package sample;
+package sample.controllers;
 
 import javafx.application.Platform;
 import javafx.event.ActionEvent;
@@ -74,12 +74,12 @@ public class Home {
         stage.show();
     }
     @FXML public void handleChangeThemeLabel(ActionEvent event) throws IOException {
-        Button b = (Button) event.getSource();
+        Label b = (Label) event.getSource();
         Stage stage = (Stage) b.getScene().getWindow();
         FXMLLoader loader = new FXMLLoader(getClass().getResource("/me/..."));
 
         stage.setScene(new Scene(loader.load(),500,500));
-        PopUpRecommend l = loader.getController();
+        //... l = loader.getController();
         stage.show();
     }
 }
