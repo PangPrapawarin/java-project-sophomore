@@ -7,18 +7,14 @@
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.text.Font?>
 
-
-<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="600.0" prefWidth="600.0"
-            xmlns="http://javafx.com/javafx/8.0.171"
-            xmlns:fx="http://javafx.com/fxml/1"
-            fx:controller="sample.LoginAdmin">
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="600.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="sample.controllers.LoginAdmin">
    <children>
       <Label layoutX="210.0" layoutY="120.0" lineSpacing="7.0" text="เข้าสู่ระบบ&#10;สำหรับผู้ดูแลระบบ" textAlignment="CENTER">
          <font>
             <Font name="Chonburi" size="20.0" />
          </font>
       </Label>
-      <Button layoutX="271.0" layoutY="360.0" mnemonicParsing="false" text="เข้าสู่ระบบ">
+      <Button fx:id="loginAdminButton" layoutX="271.0" layoutY="360.0" mnemonicParsing="false" onAction="#handleLoginAdminButton" text="เข้าสู่ระบบ">
          <font>
             <Font name="FC Active Light Italic" size="14.0" />
          </font>
@@ -33,7 +29,7 @@
             <Font name="FC Active Light Italic" size="16.0" />
          </font>
       </Label>
-      <TextField layoutX="253.0" layoutY="244.0" promptText="username" />
-      <PasswordField layoutX="253.0" layoutY="287.0" promptText="password" />
+      <TextField fx:id="usernameField" layoutX="253.0" layoutY="244.0" promptText="username" />
+      <PasswordField fx:id="passwordField" layoutX="253.0" layoutY="287.0" promptText="password" />
    </children>
 </AnchorPane>

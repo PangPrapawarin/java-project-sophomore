@@ -6,23 +6,20 @@
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="600.0" prefWidth="600.0"
-            xmlns="http://javafx.com/javafx/8.0.171"
-            xmlns:fx="http://javafx.com/fxml/1"
-            fx:controller="sample.LoginSuccessAdmin">
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="600.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="sample.controllers.LoginSuccessAdmin">
    <children>
       <Label layoutX="174.0" layoutY="64.0" lineSpacing="4.0" text="รายชื่อเจ้าหน้าที่ส่วนกลาง" textAlignment="CENTER">
          <font>
             <Font name="Chonburi" size="20.0" />
          </font>
       </Label>
-      <Button layoutX="531.0" layoutY="563.0" mnemonicParsing="false" text="ลงชื่อออก">
+      <Button fx:id="logoutButton" layoutX="531.0" layoutY="563.0" mnemonicParsing="false" onAction="#handleLogoutButton" text="ลงชื่อออก">
          <font>
             <Font name="FC Active Light Italic" size="13.0" />
          </font>
       </Button>
-      <TableView fx:id="studentsTable" layoutX="68.0" layoutY="104.0" prefHeight="381.0" prefWidth="464.0" />
-      <Button layoutX="68.0" layoutY="494.0" mnemonicParsing="false" text="สร้างบัญชีเจ้าหน้าที่ส่วนกลาง">
+      <TableView fx:id="staffTable" layoutX="68.0" layoutY="104.0" prefHeight="381.0" prefWidth="464.0" />
+      <Button fx:id="newStaffAccountButton" layoutX="68.0" layoutY="494.0" mnemonicParsing="false" onAction="#handleNewStaffAccountButton" text="สร้างบัญชีเจ้าหน้าที่ส่วนกลาง">
          <font>
             <Font name="FC Active Light Italic" size="13.0" />
          </font>

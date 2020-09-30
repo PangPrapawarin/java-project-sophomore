@@ -7,43 +7,40 @@
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.text.Font?>
 
-
-<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="600.0" prefWidth="600.0"
-            xmlns="http://javafx.com/javafx/8.0.171"
-            xmlns:fx="http://javafx.com/fxml/1"
-            fx:controller="sample.LoginSuccessGuest">
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="600.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1"
+            fx:controller="sample.controllers.LoginSuccessGuest">
    <children>
       <Label layoutX="233.0" layoutY="80.0" lineSpacing="4.0" text="ชื่อผู้พักอาศัย" textAlignment="CENTER">
          <font>
             <Font name="Chonburi" size="20.0" />
          </font>
       </Label>
-      <Button layoutX="531.0" layoutY="563.0" mnemonicParsing="false" text="ลงชื่อออก">
+      <Button fx:id="logoutButton" layoutX="531.0" layoutY="563.0" mnemonicParsing="false" onAction="#handleLogoutButton" text="ลงชื่อออก">
          <font>
             <Font name="FC Active Light Italic" size="13.0" />
          </font>
       </Button>
-      <Label layoutX="271.0" layoutY="332.0" lineSpacing="4.0" text="username" textAlignment="CENTER">
+      <Label fx:id="username" layoutX="271.0" layoutY="332.0" lineSpacing="4.0" text="username" textAlignment="CENTER">
          <font>
             <Font name="FC Active Light Italic" size="18.0" />
          </font>
       </Label>
-      <ImageView fitHeight="150.0" fitWidth="200.0" layoutX="239.0" layoutY="150.0" pickOnBounds="true" preserveRatio="true">
+      <ImageView fx:id="photo" fitHeight="150.0" fitWidth="200.0" layoutX="239.0" layoutY="150.0" pickOnBounds="true" preserveRatio="true">
          <image>
             <Image url="sample" />
          </image>
       </ImageView>
-      <Label layoutX="268.0" layoutY="361.0" lineSpacing="4.0" text="ชื่อ-นามสกุล" textAlignment="CENTER">
+      <Label fx:id="name" layoutX="268.0" layoutY="361.0" lineSpacing="4.0" text="ชื่อ-นามสกุล" textAlignment="CENTER">
          <font>
             <Font name="FC Active Light Italic" size="18.0" />
          </font>
       </Label>
-      <Label layoutX="262.0" layoutY="388.0" lineSpacing="4.0" text="เปลี่ยนรหัสผ่าน" textAlignment="CENTER">
+      <Label fx:id="changePassword" layoutX="262.0" layoutY="388.0" lineSpacing="4.0" onMouseClicked="#handleChangePasswordLabel" text="เปลี่ยนรหัสผ่าน" textAlignment="CENTER">
          <font>
             <Font name="FC Active Light Italic" size="18.0" />
          </font>
       </Label>
-      <Button layoutX="228.0" layoutY="420.0" mnemonicParsing="false" text="ระบบจัดการจดหมาย/เอกสาร/พัสดุ">
+      <Button fx:id="successReceiveButton" layoutX="228.0" layoutY="420.0" mnemonicParsing="false" onAction="#handleSuccessReceiveButton" text="ระบบจัดการจดหมาย/เอกสาร/พัสดุ">
          <font>
             <Font name="FC Active Light Italic" size="13.0" />
          </font>
