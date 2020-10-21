@@ -1,6 +1,6 @@
 package sample.models;
 
-public class Supplies extends Things{
+public class Supplies extends Mails{
     private String service;
     private String trackingNumber;
 }

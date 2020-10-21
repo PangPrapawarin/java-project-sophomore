@@ -7,6 +7,7 @@ import javafx.scene.Scene;
 import javafx.scene.control.Button;
 import javafx.scene.control.TableView;
 import javafx.stage.Stage;
+import sample.manageData.ManageFile;
 
 import java.io.IOException;
 
@@ -15,6 +16,9 @@ public class LoginSuccessAdmin {
     @FXML private Button newStaffAccountButton;
     @FXML private Button logoutButton;
 
+    @FXML public void initialize(){
+        ManageFile staffData = new ManageFile("data", "staffAccount.csv");
+    }
     @FXML public void handleNewStaffAccountButton(ActionEvent event) throws IOException {
         Button b = (Button) event.getSource();
         Stage stage = (Stage) b.getScene().getWindow();

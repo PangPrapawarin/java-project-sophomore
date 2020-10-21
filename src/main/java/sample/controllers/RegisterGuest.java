@@ -8,6 +8,7 @@ import javafx.scene.control.Button;
 import javafx.scene.control.PasswordField;
 import javafx.scene.control.TextField;
 import javafx.stage.Stage;
+import sample.manageData.ManageFile;
 
 import java.io.IOException;
 
@@ -18,6 +19,9 @@ public class RegisterGuest {
     @FXML private Button previousButton;
     @FXML private Button newAccountButton;
 
+    @FXML public void initialize(){
+        ManageFile staffData = new ManageFile("data", "GuestAccount.csv");
+    }
     @FXML public void handlePreviousButton(ActionEvent event) throws IOException {
         Button b = (Button) event.getSource();
         Stage stage = (Stage) b.getScene().getWindow();

@@ -8,16 +8,25 @@ import javafx.scene.control.Button;
 import javafx.scene.control.PasswordField;
 import javafx.scene.control.TextField;
 import javafx.stage.Stage;
+import sample.manageData.AccountList;
+import sample.manageData.ManageFile;
+import sample.models.CreateAccounts;
 
 import java.io.IOException;
 
 public class RegisterStaff {
+    private CreateAccounts staff;
+    private AccountList staffsAccount;
+
     @FXML private TextField usernameField;
     @FXML private PasswordField passwordField;
     @FXML private PasswordField confirmPasswordField;
     @FXML private Button previousButton;
     @FXML private Button newAccountButton;
 
+    @FXML public void initialize(){
+        ManageFile staffData = new ManageFile("data", "staffAccount.csv");
+    }
     @FXML public void handlePreviousButton(ActionEvent event) throws IOException {
         Button b = (Button) event.getSource();
         Stage stage = (Stage) b.getScene().getWindow();
