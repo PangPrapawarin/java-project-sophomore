@@ -79,5 +79,10 @@
       <TextField fx:id="buildingNumberField" layoutX="348.0" layoutY="260.0" promptText="building number" />
       <TextField fx:id="numberOfGuestField" layoutX="348.0" layoutY="378.0" promptText="number of guest(s)" />
       <TextField fx:id="guestNameField" layoutX="348.0" layoutY="417.0" promptText="guest name" />
+      <Button fx:id="addPhotoButton" layoutX="128.0" layoutY="348.0" mnemonicParsing="false" onAction="#handleConfirmButton" prefHeight="24.0" prefWidth="74.0" text="เพิ่มรูปภาพ">
+         <font>
+            <Font name="FC Active Light Italic" size="14.0" />
+         </font>
+      </Button>
    </children>
 </AnchorPane>

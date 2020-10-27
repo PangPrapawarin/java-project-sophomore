@@ -19,14 +19,14 @@
             <Font name="FC Active Light Italic" size="13.0" />
          </font>
       </Button>
-      <Label layoutX="138.0" layoutY="315.0" lineSpacing="4.0" text="ชื่อ-นามสกุล : นางสาวปภาวรินท์ ครามเขียว&#10;ชื่อเล่น : แป้ง รหัสนิสิต : 6210450610" textAlignment="CENTER">
+      <Label layoutX="138.0" layoutY="335.0" lineSpacing="4.0" text="ชื่อ-นามสกุล : นางสาวปภาวรินท์ ครามเขียว&#10;ชื่อเล่น : แป้ง รหัสนิสิต : 6210450610" textAlignment="CENTER">
          <font>
             <Font name="FC Active Light Italic" size="18.0" />
          </font>
       </Label>
-      <ImageView fx:id="photo" fitHeight="150.0" fitWidth="200.0" layoutX="189.0" layoutY="125.0" pickOnBounds="true" preserveRatio="true">
+      <ImageView fx:id="photo" fitHeight="186.0" fitWidth="186.0" layoutX="157.0" layoutY="125.0" pickOnBounds="true" preserveRatio="true">
          <image>
-            <Image url="sample" />
+            <Image url="@../../../../data/nisit.jpg" />
          </image>
       </ImageView>
    </children>

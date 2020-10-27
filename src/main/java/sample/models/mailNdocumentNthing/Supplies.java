@@ -1,4 +1,4 @@
-package sample.models;
+package sample.models.mailNdocumentNthing;
 
 public class Supplies extends Mails{
     private String service;

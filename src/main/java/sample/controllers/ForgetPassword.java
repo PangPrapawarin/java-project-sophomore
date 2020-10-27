@@ -12,30 +12,29 @@ import sample.manageData.ManageStaffFile;
 
 import java.io.IOException;
 
-public class RegisterGuest {
-    @FXML private TextField nameField;
+public class ForgetPassword {
     @FXML private TextField usernameField;
-    @FXML private PasswordField passwordField;
+    @FXML private PasswordField newPasswordField;
     @FXML private PasswordField confirmPasswordField;
     @FXML private Button previousButton;
-    @FXML private Button newAccountButton;
+    @FXML private Button newPasswordButton;
 
     @FXML public void initialize(){
-        ManageStaffFile staffData = new ManageStaffFile("data", "GuestAccount.csv");
+
     }
     @FXML public void handlePreviousButton(ActionEvent event) throws IOException {
         Button b = (Button) event.getSource();
         Stage stage = (Stage) b.getScene().getWindow();
-        FXMLLoader loader = new FXMLLoader(getClass().getResource("/me/login_guest.fxml"));
+        FXMLLoader loader = new FXMLLoader(getClass().getResource("/me/...fxml"));
 
         stage.setScene(new Scene(loader.load(),600,600));
         LoginSuccessGuest l = loader.getController();
         stage.show();
     }
-    @FXML public void handleNewAccountButton(ActionEvent event) throws IOException {
+    @FXML public void handleNewPasswordButton(ActionEvent event) throws IOException {
         Button b = (Button) event.getSource();
         Stage stage = (Stage) b.getScene().getWindow();
-        FXMLLoader loader = new FXMLLoader(getClass().getResource("/me/login_guest.fxml"));
+        FXMLLoader loader = new FXMLLoader(getClass().getResource("/me/...fxml"));
 
         stage.setScene(new Scene(loader.load(),600,600));
         LoginSuccessGuest l = loader.getController();

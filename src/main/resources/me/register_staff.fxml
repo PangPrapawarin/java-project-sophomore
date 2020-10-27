@@ -14,33 +14,39 @@
             <Font name="Chonburi" size="20.0" />
          </font>
       </Label>
-      <Button fx:id="previousButton" layoutX="222.0" layoutY="382.0" mnemonicParsing="false" onAction="#handlePreviousButton" text="ย้อนกลับ">
+      <Button fx:id="previousButton" layoutX="222.0" layoutY="419.0" mnemonicParsing="false" onAction="#handlePreviousButton" text="ย้อนกลับ">
          <font>
             <Font name="FC Active Light Italic" size="14.0" />
          </font>
       </Button>
-      <Label layoutX="207.0" layoutY="236.0" text="ชื่อผู้ใช้ :">
+      <Label layoutX="220.0" layoutY="274.0" text="ชื่อผู้ใช้ :">
          <font>
             <Font name="FC Active Light Italic" size="16.0" />
          </font>
       </Label>
-      <Label layoutX="198.0" layoutY="279.0" text="รหัสผ่าน :">
+      <Label layoutX="211.0" layoutY="317.0" text="รหัสผ่าน :">
          <font>
             <Font name="FC Active Light Italic" size="16.0" />
          </font>
       </Label>
-      <TextField fx:id="usernameField" layoutX="253.0" layoutY="232.0" promptText="username" />
-      <PasswordField fx:id="passwordField" layoutX="253.0" layoutY="275.0" promptText="password" />
-      <Label layoutX="173.0" layoutY="320.0" text="ยืนยันรหัสผ่าน :">
+      <TextField fx:id="usernameField" layoutX="266.0" layoutY="270.0" promptText="username" />
+      <PasswordField fx:id="passwordField" layoutX="266.0" layoutY="313.0" promptText="password" />
+      <Label layoutX="186.0" layoutY="358.0" text="ยืนยันรหัสผ่าน :">
          <font>
             <Font name="FC Active Light Italic" size="16.0" />
          </font>
       </Label>
-      <PasswordField fx:id="confirmPasswordField" layoutX="253.0" layoutY="316.0" promptText="confirm password" />
-      <Button fx:id="newAccountButton" layoutX="303.0" layoutY="382.0" mnemonicParsing="false" onAction="#handleNewAccountButton" text="สร้างบัญชีใหม่">
+      <PasswordField fx:id="confirmPasswordField" layoutX="266.0" layoutY="354.0" promptText="confirm password" />
+      <Button fx:id="newAccountButton" layoutX="303.0" layoutY="419.0" mnemonicParsing="false" onAction="#handleNewAccountButton" text="สร้างบัญชีใหม่">
          <font>
             <Font name="FC Active Light Italic" size="14.0" />
          </font>
       </Button>
+      <Label layoutX="154.0" layoutY="233.0" text="ชื่อเจ้าหน้าที่ส่วนกลาง :">
+         <font>
+            <Font name="FC Active Light Italic" size="16.0" />
+         </font>
+      </Label>
+      <TextField fx:id="staffNameField" layoutX="265.0" layoutY="229.0" promptText="staff name" />
    </children>
 </AnchorPane>

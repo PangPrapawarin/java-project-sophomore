@@ -22,7 +22,7 @@ public class Manage {
     @FXML public void handleNewManageButton(ActionEvent event) throws IOException {
         Button b = (Button) event.getSource();
         Stage stage = (Stage) b.getScene().getWindow();
-        FXMLLoader loader = new FXMLLoader(getClass().getResource("/me/new_manage.fxml"));
+        FXMLLoader loader = new FXMLLoader(getClass().getResource("/me/new_mail.fxml"));
 
         stage.setScene(new Scene(loader.load(),600,600));
         NewManage l = loader.getController();
