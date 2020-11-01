@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="600.0" prefWidth="600.0" style="-fx-background-color: #cee8f0;" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="project.controllers.DetailRoom">
+   <children>
+      <Label layoutX="219.0" layoutY="63.0" lineSpacing="4.0" text="ข้อมูลผู้พักอาศัย" textAlignment="CENTER">
+         <font>
+            <Font name="Chonburi" size="20.0" />
+         </font>
+      </Label>
+      <Button fx:id="logoutButton" layoutX="531.0" layoutY="563.0" mnemonicParsing="false" onAction="#handleLogoutButton" text="ลงชื่อออก">
+         <font>
+            <Font name="FC Active Light Italic" size="13.0" />
+         </font>
+      </Button>
+      <TableView fx:id="guestTable" layoutX="50.0" layoutY="179.0" prefHeight="306.0" prefWidth="497.0">
+         <columns>
+            <TableColumn fx:id="nameColumn" prefWidth="107.66668701171875" text="name" />
+            <TableColumn fx:id="roomNumberColumn" prefWidth="86.33331298828125" text="room number" />
+            <TableColumn fx:id="floorColumn" prefWidth="41.0" text="floor" />
+            <TableColumn fx:id="buildingColumn" prefWidth="63.33331298828125" text="building" />
+            <TableColumn fx:id="roomTypeColumn" minWidth="0.0" prefWidth="132.66668701171875" text="room type" />
+            <TableColumn fx:id="amountColumn" prefWidth="63.33331298828125" text="amount" />
+         </columns></TableView>
+      <Button fx:id="previousButton" layoutX="14.0" layoutY="563.0" mnemonicParsing="false" onAction="#handlePreviousButton" text="ย้อนกลับ">
+         <font>
+            <Font name="FC Active Light Italic" size="13.0" />
+         </font>
+      </Button>
+      <Label layoutX="50.0" layoutY="143.0" text="ค้นหาห้องจากชื่อผู้พักอาศัย :">
+         <font>
+            <Font name="FC Active Light Italic" size="15.0" />
+         </font>
+      </Label>
+      <Button fx:id="newGuestButton" layoutX="50.0" layoutY="498.0" mnemonicParsing="false" onAction="#handleNewGuestButton" text="สร้างข้อมูลผู้พักอาศัยใหม่">
+         <font>
+            <Font name="FC Active Light Italic" size="13.0" />
+         </font>
+      </Button>
+      <TextField fx:id="guestNameSearchField" layoutX="183.0" layoutY="139.0" prefHeight="25.0" prefWidth="102.0" promptText="search" />
+      <Button fx:id="searchButton" layoutX="299.0" layoutY="140.0" mnemonicParsing="false" onAction="#handleSearchButton" text="ค้นหา">
+         <font>
+            <Font name="FC Active Light Italic" size="13.0" />
+         </font>
+      </Button>
+      <Label fx:id="alertLabel" layoutX="357.0" layoutY="143.0" prefHeight="17.0" prefWidth="151.0" textFill="#c30000">
+         <font>
+            <Font name="FC Active Light Italic" size="16.0" />
+         </font>
+      </Label>
+   </children>
+</AnchorPane>

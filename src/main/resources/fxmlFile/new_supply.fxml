@@ -1,0 +1,100 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.CheckBox?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane prefHeight="600.0" prefWidth="600.0" style="-fx-background-color: #cee8f0;" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="project.controllers.NewSupply">
+   <children>
+      <Label layoutX="216.0" layoutY="47.0" lineSpacing="4.0" text="สร้างรายละเอียด&#10;พัสดุใหม่" textAlignment="CENTER">
+         <font>
+            <Font name="Chonburi" size="20.0" />
+         </font>
+      </Label>
+      <Button fx:id="previousButton" layoutX="14.0" layoutY="563.0" mnemonicParsing="false" onAction="#handlePreviousButton" text="ย้อนกลับ">
+         <font>
+            <Font name="FC Active Light Italic" size="13.0" />
+         </font>
+      </Button>
+      <Button fx:id="logoutButton" layoutX="531.0" layoutY="563.0" mnemonicParsing="false" onAction="#handleLogoutButton" text="ลงชื่อออก">
+         <font>
+            <Font name="FC Active Light Italic" size="13.0" />
+         </font>
+      </Button>
+      <Button fx:id="confirmButton" layoutX="270.0" layoutY="529.0" mnemonicParsing="false" onAction="#handleConfirmButton" text="ยืนยัน">
+         <font>
+            <Font name="FC Active Light Italic" size="14.0" />
+         </font>
+      </Button>
+      <Label layoutX="198.0" layoutY="156.0" text="ที่อยู่ผู้ส่ง :">
+         <font>
+            <Font name="FC Active Light Italic" size="16.0" />
+         </font>
+      </Label>
+      <Label layoutX="204.0" layoutY="235.0" text="ชื่อผู้รับ :">
+         <font>
+            <Font name="FC Active Light Italic" size="16.0" />
+         </font>
+      </Label>
+      <TextField fx:id="formField" layoutX="253.0" layoutY="151.0" promptText="from" />
+      <Label layoutX="184.0" layoutY="276.0" text="ห้องพักผู้รับ :">
+         <font>
+            <Font name="FC Active Light Italic" size="16.0" />
+         </font>
+      </Label>
+      <Label layoutX="166.0" layoutY="391.0" text="ชื่อเจ้าหน้าที่ที่รับ :">
+         <font>
+            <Font name="FC Active Light Italic" size="16.0" />
+         </font>
+      </Label>
+      <TextField fx:id="nameReceiverField" layoutX="253.0" layoutY="231.0" promptText="name receiver" />
+      <TextField fx:id="roomNumberField" layoutX="253.0" layoutY="272.0" promptText="room number" />
+      <TextField fx:id="staffNameField" layoutX="253.0" layoutY="387.0" promptText="staff name" />
+      <Label layoutX="204.0" layoutY="193.0" text="ชื่อผู้ส่ง :">
+         <font>
+            <Font name="FC Active Light Italic" size="16.0" />
+         </font>
+      </Label>
+      <TextField fx:id="nameSenderField" layoutX="253.0" layoutY="189.0" promptText="name sender" />
+      <Label layoutX="154.0" layoutY="314.0" text="ชื่อบริการที่ส่งพัสดุ :">
+         <font>
+            <Font name="FC Active Light Italic" size="16.0" />
+         </font>
+      </Label>
+      <TextField fx:id="companyNameField" layoutX="254.0" layoutY="310.0" promptText="company name" />
+      <Label layoutX="211.0" layoutY="429.0" text="ขนาด :">
+         <font>
+            <Font name="FC Active Light Italic" size="16.0" />
+         </font>
+      </Label>
+      <CheckBox fx:id="choiceBoxSmall" layoutX="253.0" layoutY="427.0" mnemonicParsing="false" onAction="#setChoiceBoxSmall" text="เล็ก">
+         <font>
+            <Font name="FC Active Light Italic" size="16.0" />
+         </font>
+      </CheckBox>
+      <CheckBox fx:id="choiceBoxMedium" layoutX="309.0" layoutY="427.0" mnemonicParsing="false" onAction="#setChoiceBoxMedium" text="กลาง">
+         <font>
+            <Font name="FC Active Light Italic" size="16.0" />
+         </font>
+      </CheckBox>
+      <CheckBox fx:id="choiceBoxBig" layoutX="377.0" layoutY="427.0" mnemonicParsing="false" onAction="#setChoiceBoxBig" text="ใหญ่">
+         <font>
+            <Font name="FC Active Light Italic" size="16.0" />
+         </font>
+      </CheckBox>
+      <Label layoutX="113.0" layoutY="350.0" text="หมายเลขติดตามการส่งพัสดุ :">
+         <font>
+            <Font name="FC Active Light Italic" size="16.0" />
+         </font>
+      </Label>
+      <TextField fx:id="trackingNumberField" layoutX="254.0" layoutY="346.0" promptText="tracking number" />
+      <Label fx:id="alertLabel" layoutX="210.0" layoutY="488.0" prefHeight="17.0" prefWidth="171.0" textFill="#c30000">
+         <font>
+            <Font name="FC Active Light Italic" size="16.0" />
+         </font>
+      </Label>
+   </children>
+</AnchorPane>
