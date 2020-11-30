@@ -7,36 +7,36 @@
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="600.0" prefWidth="600.0" style="-fx-background-color: #cee8f0;" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="project.controllers.LoginAdmin">
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="600.0" prefWidth="600.0" style="-fx-background-color: #eeded2;" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="project.controllers.LoginAdmin">
    <children>
-      <Label layoutX="210.0" layoutY="120.0" lineSpacing="7.0" text="เข้าสู่ระบบ&#10;สำหรับผู้ดูแลระบบ" textAlignment="CENTER">
+      <Label layoutX="210.0" layoutY="120.0" lineSpacing="7.0" text="เข้าสู่ระบบ&#10;สำหรับผู้ดูแลระบบ" textAlignment="CENTER" textFill="#8a6557">
          <font>
             <Font name="Chonburi" size="20.0" />
          </font>
       </Label>
-      <Button fx:id="loginAdminButton" layoutX="307.0" layoutY="356.0" mnemonicParsing="false" onAction="#handleLoginAdminButton" text="เข้าสู่ระบบ">
+      <Button fx:id="loginAdminButton" layoutX="307.0" layoutY="356.0" mnemonicParsing="false" onAction="#handleLoginAdminButton" text="เข้าสู่ระบบ" textFill="#8a6557">
          <font>
             <Font name="FC Active Light Italic" size="14.0" />
          </font>
       </Button>
-      <Label layoutX="207.0" layoutY="248.0" text="ชื่อผู้ใช้ :">
+      <Label layoutX="207.0" layoutY="248.0" text="ชื่อผู้ใช้ :" textFill="#8a6557">
          <font>
             <Font name="FC Active Light Italic" size="16.0" />
          </font>
       </Label>
-      <Label layoutX="198.0" layoutY="291.0" text="รหัสผ่าน :">
+      <Label layoutX="198.0" layoutY="291.0" text="รหัสผ่าน :" textFill="#8a6557">
          <font>
             <Font name="FC Active Light Italic" size="16.0" />
          </font>
       </Label>
       <TextField fx:id="usernameField" layoutX="253.0" layoutY="244.0" promptText="username" />
       <PasswordField fx:id="passwordField" layoutX="253.0" layoutY="287.0" promptText="password" />
-      <Button fx:id="previousButton" layoutX="236.0" layoutY="356.0" mnemonicParsing="false" onAction="#handlePreviousButton" text="ย้อนกลับ">
+      <Button fx:id="previousButton" layoutX="236.0" layoutY="356.0" mnemonicParsing="false" onAction="#handlePreviousButton" text="ย้อนกลับ" textFill="#8a6557">
          <font>
             <Font name="FC Active Light Italic" size="14.0" />
          </font>
       </Button>
-      <Button fx:id="forgetPasswordButton" layoutX="266.0" layoutY="398.0" mnemonicParsing="false" onAction="#handleForgetPasswordButton" text="เปลี่ยนรหัสผ่าน">
+      <Button fx:id="forgetPasswordButton" layoutX="266.0" layoutY="398.0" mnemonicParsing="false" onAction="#handleForgetPasswordButton" text="เปลี่ยนรหัสผ่าน" textFill="#8a6557">
          <font>
             <Font name="FC Active Light Italic" size="12.0" />
          </font>

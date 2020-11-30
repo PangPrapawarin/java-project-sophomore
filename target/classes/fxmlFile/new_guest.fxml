@@ -7,51 +7,51 @@
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="600.0" prefWidth="600.0" style="-fx-background-color: #cee8f0;" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="project.controllers.NewGuest">
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="600.0" prefWidth="600.0" style="-fx-background-color: #eeded2;" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="project.controllers.NewGuest">
    <children>
-      <Label layoutX="227.0" layoutY="66.0" lineSpacing="4.0" text="รายละเอียด&#10;ผู้พักอาศัยใหม่" textAlignment="CENTER">
+      <Label layoutX="227.0" layoutY="66.0" lineSpacing="4.0" text="รายละเอียด&#10;ผู้พักอาศัยใหม่" textAlignment="CENTER" textFill="#8a6557">
          <font>
             <Font name="Chonburi" size="20.0" />
          </font>
       </Label>
-      <Button fx:id="previousButton" layoutX="14.0" layoutY="563.0" mnemonicParsing="false" onAction="#handlePreviousButton" text="ย้อนกลับ">
+      <Button fx:id="previousButton" layoutX="14.0" layoutY="563.0" mnemonicParsing="false" onAction="#handlePreviousButton" text="ย้อนกลับ" textFill="#8a6557">
          <font>
             <Font name="FC Active Light Italic" size="13.0" />
          </font>
       </Button>
-      <Button fx:id="logoutButton" layoutX="531.0" layoutY="563.0" mnemonicParsing="false" onAction="#handleLogoutButton" text="ลงชื่อออก">
+      <Button fx:id="logoutButton" layoutX="531.0" layoutY="563.0" mnemonicParsing="false" onAction="#handleLogoutButton" text="ลงชื่อออก" textFill="#8a6557">
          <font>
             <Font name="FC Active Light Italic" size="13.0" />
          </font>
       </Button>
-      <Button fx:id="confirmButton" layoutX="282.0" layoutY="484.0" mnemonicParsing="false" onAction="#handleConfirmButton" text="ยืนยัน">
+      <Button fx:id="confirmButton" layoutX="282.0" layoutY="484.0" mnemonicParsing="false" onAction="#handleConfirmButton" text="ยืนยัน" textFill="#8a6557">
          <font>
             <Font name="FC Active Light Italic" size="14.0" />
          </font>
       </Button>
-      <Label layoutX="192.0" layoutY="195.0" text="หมายเลขห้องพัก :">
+      <Label layoutX="192.0" layoutY="195.0" text="หมายเลขห้องพัก :" textFill="#8a6557">
          <font>
             <Font name="FC Active Light Italic" size="16.0" />
          </font>
       </Label>
       <TextField fx:id="roomNumberField" layoutX="281.0" layoutY="190.0" promptText="room number" />
-      <Label layoutX="199.0" layoutY="318.0" text="ประเภทห้องพัก :">
+      <Label layoutX="199.0" layoutY="318.0" text="ประเภทห้องพัก :" textFill="#8a6557">
          <font>
             <Font name="FC Active Light Italic" size="16.0" />
          </font>
       </Label>
       <ChoiceBox fx:id="roomType" layoutX="281.0" layoutY="314.0" prefHeight="25.0" prefWidth="149.0" />
-      <Label layoutX="212.0" layoutY="278.0" text="หมายเลขชั้น :">
+      <Label layoutX="212.0" layoutY="278.0" text="หมายเลขชั้น :" textFill="#8a6557">
          <font>
             <Font name="FC Active Light Italic" size="16.0" />
          </font>
       </Label>
-      <Label layoutX="194.0" layoutY="235.0" text="หมายเลขอาคาร :">
+      <Label layoutX="194.0" layoutY="235.0" text="หมายเลขอาคาร :" textFill="#8a6557">
          <font>
             <Font name="FC Active Light Italic" size="16.0" />
          </font>
       </Label>
-      <Label layoutX="162.0" layoutY="360.0" text="ชื่อ-นามสกุลผู้พักอาศัย :">
+      <Label layoutX="162.0" layoutY="360.0" text="ชื่อ-นามสกุลผู้พักอาศัย :" textFill="#8a6557">
          <font>
             <Font name="FC Active Light Italic" size="16.0" />
          </font>
@@ -64,7 +64,7 @@
             <Font name="FC Active Light Italic" size="16.0" />
          </font>
       </Label>
-      <Label layoutX="190.0" layoutY="402.0" text="จำนวนผู้พักอาศัย :">
+      <Label layoutX="190.0" layoutY="402.0" text="จำนวนผู้พักอาศัย :" textFill="#8a6557">
          <font>
             <Font name="FC Active Light Italic" size="16.0" />
          </font>

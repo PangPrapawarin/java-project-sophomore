@@ -10,7 +10,7 @@ import javafx.scene.control.PasswordField;
 import javafx.scene.control.TextField;
 import javafx.stage.Stage;
 import project.manageData.ManageStaffFile;
-import project.models.staff.StaffList;
+import project.models.StaffAccount;
 
 import java.io.IOException;
 import java.time.LocalDateTime;
@@ -19,11 +19,10 @@ import java.time.format.DateTimeFormatter;
 public class LoginStaff {
     private String username;
     private String password;
-    private StaffList staffList;
+    private StaffAccount staffAccount,staffList;
     private LocalDateTime localDateTime = LocalDateTime.now();
     private DateTimeFormatter dateTimeFormatter = DateTimeFormatter.ofPattern("dd/MM/yyyy HH:mm:ss");
     private ManageStaffFile staffData;
-    private ForgetPassword forwardPage;
 
     @FXML private TextField usernameField;
     @FXML private PasswordField passwordField;
@@ -42,7 +41,7 @@ public class LoginStaff {
         username = usernameField.getText();
         password = passwordField.getText();
         if (!(username.equals("")||password.equals(""))) {
-            if (staffList.checkHaveUsernameAndPassword(username,password)) {
+            if (staffList.checkAccount(username,password)) {
                 if (staffList.checkUsernameStaffWhenLogin(username)) {
                     staffList.setTimeStaff(username,localDateTime.format(dateTimeFormatter));
                     staffData.setStaffs(staffList);
@@ -51,7 +50,7 @@ public class LoginStaff {
                     FXMLLoader loader = new FXMLLoader(getClass().getResource("/fxmlFile/login_success_staff.fxml"));
                     stage.setScene(new Scene(loader.load(), 600, 600));
                     LoginSuccessStaff l = loader.getController();
-                    l.setNameStaff(username,staffList.getNameStaff(username));
+                    l.setNameStaff(username,staffList.getName(username));
                     stage.show();
                 } else {
                     alertLabel.setText("คุณถูกจำกัดสิทธิ์ในการเข้าใช้งาน");

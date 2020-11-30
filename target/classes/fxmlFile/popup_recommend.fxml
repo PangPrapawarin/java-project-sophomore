@@ -5,19 +5,19 @@
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="600.0" prefWidth="600.0" style="-fx-background-color: #cee8f0;" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="project.controllers.PopUpRecommend">
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="600.0" prefWidth="600.0" style="-fx-background-color: #eeded2;" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="project.controllers.PopUpRecommend">
    <children>
-      <Label layoutX="237.0" layoutY="70.0" lineSpacing="4.0" text="คำแนะนำ&#10;ในการใช้งาน" textAlignment="CENTER">
+      <Label layoutX="237.0" layoutY="70.0" lineSpacing="4.0" text="คำแนะนำ&#10;ในการใช้งาน" textAlignment="CENTER" textFill="#8a6557">
          <font>
             <Font name="Chonburi" size="20.0" />
          </font>
       </Label>
-      <Button fx:id="backToHomeButton" layoutX="535.0" layoutY="563.0" mnemonicParsing="false" onAction="#handleBackToHomeButton" text="ย้อนกลับ">
+      <Button fx:id="backToHomeButton" layoutX="535.0" layoutY="563.0" mnemonicParsing="false" onAction="#handleBackToHomeButton" text="ย้อนกลับ" textFill="#8a6557">
          <font>
             <Font name="FC Active Light Italic" size="13.0" />
          </font>
       </Button>
-      <Label layoutX="83.0" layoutY="219.0" text="สำหรับผู้ดูแลระบบ : มีหน้าระบบจัดการข้อมูลเจ้าหน้าทีส่วนกลาง &#10;&#10;&#9;&#9;        และหน้าสร้างบัญชีเจ้าหน้าที่ส่วนกลาง&#10;&#10;สำหรับเจ้าหน้าที่ส่วนกลาง : มีหน้าการจัดการเกี่ยวกับห้องพักและจดหมาย/เอกสาร/พัสดุ&#10;&#10;สำหรับผู้พักอาศัย : มีหน้าดูจดหมาย/เอกสาร/พัสดุที่รับไปแล้ว&#10;&#10;โดยแต่ละผู้ใช้ระบบจะไม่สามารถเข้าสู่ระบบข้ามระบบกันได้">
+      <Label layoutX="73.0" layoutY="219.0" text="สำหรับผู้ดูแลระบบ : มีหน้าระบบจัดการข้อมูลเจ้าหน้าที่ส่วนกลาง &#10;&#10;&#9;&#9;        และหน้าสร้างบัญชีเจ้าหน้าที่ส่วนกลาง&#10;&#10;สำหรับเจ้าหน้าที่ส่วนกลาง : มีหน้าการจัดการเกี่ยวกับห้องพักและจดหมาย / เอกสาร / พัสดุ&#10;&#10;สำหรับผู้พักอาศัย : มีหน้าดูจดหมาย / เอกสาร / พัสดุที่รับไปแล้ว&#10;&#10;โดยแต่ละผู้ใช้ระบบจะไม่สามารถเข้าสู่ระบบข้ามระบบกันได้" textFill="#8a6557">
          <font>
             <Font name="FC Active Light Italic" size="18.0" />
          </font>

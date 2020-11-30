@@ -1,6 +1,8 @@
-package project.models.things;
+package project.models;
 
-public class CreateThings {
+import java.util.ArrayList;
+
+public class Thing {
     private String date;
     private String type;
     private String from;
@@ -12,8 +14,9 @@ public class CreateThings {
     private String service;
     private String trackingNumber;
     private String important;
+    private ArrayList<Thing> things, selectThings;
 
-    public CreateThings(String type, String from, String nameSender, String nameReceiver, String roomNumber, String date, String staffName, String size, String service, String trackingNumber, String important) {
+    public Thing(String type, String from, String nameSender, String nameReceiver, String roomNumber, String date, String staffName, String size, String service, String trackingNumber, String important) {
         this.type = type;
         this.from = from;
         this.nameSender = nameSender;
@@ -25,6 +28,15 @@ public class CreateThings {
         this.service = service;
         this.trackingNumber = trackingNumber;
         this.important = important;
+    }
+
+    public Thing() {
+        things = new ArrayList<>();
+        selectThings = new ArrayList<>();
+    }
+
+    public void addThing(Thing thing) {
+        things.add(thing);
     }
 
     public String getType() {
@@ -71,7 +83,32 @@ public class CreateThings {
         return size;
     }
 
-    public void setDate(String type,String room, String nameSender,String nameReceiver,String time) {
+    public void removeThing(Thing thing) {
+        things.remove(thing);
+    }
+
+    public void setDate(String time) {
         date = time;
+    }
+
+    public ArrayList<Thing> getThings() {
+        return things;
+    }
+
+    public ArrayList<Thing> showGuestThings(String name) {
+        for (Thing thing : things) {
+            if (thing.getNameReceiver().toLowerCase().equals(name.toLowerCase())) {
+                return selectThings;
+            }
+        }
+        return null;
+    }
+
+    public void addThingGuest(String name) {
+        for (Thing thing : things) {
+            if (thing.getNameReceiver().toLowerCase().equals(name.toLowerCase())) {
+                selectThings.add(thing);
+            }
+        }
     }
 }

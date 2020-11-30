@@ -8,12 +8,12 @@ import javafx.scene.control.Button;
 import javafx.scene.control.Label;
 import javafx.stage.Stage;
 import project.manageData.ManageStaffFile;
-import project.models.staff.StaffList;
+import project.models.StaffAccount;
 
 import java.io.IOException;
 
 public class LoginSuccessStaff {
-    private StaffList staffList;
+    private StaffAccount staffList;
     private ManageStaffFile staffData;
 
     @FXML private Label username;

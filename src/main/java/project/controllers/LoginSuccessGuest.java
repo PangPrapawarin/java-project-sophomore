@@ -1,5 +1,6 @@
 package project.controllers;
 
+import javafx.application.Platform;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
@@ -8,14 +9,14 @@ import javafx.scene.control.Button;
 import javafx.scene.control.Label;
 import javafx.stage.Stage;
 import project.manageData.ManageGuestFile;
-import project.models.guest.GuestList;
+import project.models.GuestAccount;
 
 import java.io.IOException;
 
 public class LoginSuccessGuest {
+    private GuestAccount guestList;
     private String nameGuest;
     private String usernameGuest;
-    private GuestList guestList;
     private LoginGuest guest;
     private ManageGuestFile guestFile;
 
@@ -24,21 +25,29 @@ public class LoginSuccessGuest {
     @FXML private Button successReceiveButton;
     @FXML private Button logoutButton;
 
-    @FXML public void initialize() throws IOException{
-        guestFile = new ManageGuestFile("data", "guestAccount.csv");
-        guestList = guestFile.getGuestList();
+    @FXML
+    public void initialize() {
+        Platform.runLater((Runnable)new Runnable() {
+            @Override
+            public void run() {
+                guestFile = new ManageGuestFile("data", "guestAccount.csv");
+                guestList = guestFile.getGuestList();
+            }
+        });
     }
     @FXML public void setNameGuest(String usernameGuest, String nameGuest) throws IOException {
         username.setText(usernameGuest);
         name.setText(nameGuest);
+        this.nameGuest = nameGuest;
     }
     @FXML public void handleSuccessReceiveButton(ActionEvent event) throws IOException {
         Button b = (Button) event.getSource();
         Stage stage = (Stage) b.getScene().getWindow();
-        FXMLLoader loader = new FXMLLoader(getClass().getResource("/fxmlFile/success_receive.fxml"));
+        FXMLLoader loader = new FXMLLoader(getClass().getResource("/fxmlFile/success_guest.fxml"));
 
         stage.setScene(new Scene(loader.load(),600,600));
-        SuccessReceive l = loader.getController();
+        SuccessGuest l = loader.getController();
+        l.setNameGuest(nameGuest);
         stage.show();
     }
     @FXML public void handleLogoutButton(ActionEvent event) throws IOException {

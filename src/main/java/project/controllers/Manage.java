@@ -11,23 +11,22 @@ import javafx.scene.control.TableColumn;
 import javafx.scene.control.TableView;
 import javafx.scene.control.cell.PropertyValueFactory;
 import javafx.stage.Stage;
-import project.manageData.ManageSuccessThingsFile;
 import project.manageData.ManageThingsFile;
-import project.models.things.CreateThings;
-import project.models.things.SuccessMailAndOtherList;
-import project.models.things.ThingsList;
+import project.models.Thing;
 
 import java.io.IOException;
+import java.time.LocalDateTime;
+import java.time.format.DateTimeFormatter;
 
 public class Manage {
     private String sortBy;
-    private ThingsList thingsList;
-    private ManageThingsFile thingsFile;
-    private SuccessMailAndOtherList successThingsList;
-    private ManageSuccessThingsFile successThingsFile;
+    private ManageThingsFile thingsFile,successThingsFile;
+    private Thing thing,thingsList,successThingsList;
+    private LocalDateTime localDateTime = LocalDateTime.now();
+    private DateTimeFormatter dateTimeFormatter = DateTimeFormatter.ofPattern("dd/MM/yyyy HH:mm:ss");
 
-    @FXML private TableColumn<CreateThings, String> nameColumn,roomNumberColumn,typeColumn,dateColumn,otherColumn,staffControlColumn;
-    @FXML private TableView<CreateThings> manageTable;
+    @FXML private TableColumn<Thing, String> nameColumn,roomNumberColumn,typeColumn,dateColumn,otherColumn,staffControlColumn;
+    @FXML private TableView<Thing> manageTable;
     @FXML private Button newManageButton;
     @FXML private Button receiveButton;
     @FXML private Button successReceiveButton;
@@ -37,26 +36,26 @@ public class Manage {
     @FXML public void initialize(){
         thingsFile = new ManageThingsFile("data", "thingsList.csv");
         thingsList = thingsFile.getThingsList();
-        successThingsFile = new ManageSuccessThingsFile("data", "successThingsList.csv");
-        successThingsList = successThingsFile.getSuccessMailAndOtherList();
+        successThingsFile = new ManageThingsFile("data", "successThingsList.csv");
+        successThingsList = successThingsFile.getThingsList();
         showThingsList();
     }
     private void showThingsList() {
-        ObservableList<CreateThings> thingsObservableList = FXCollections.observableArrayList(thingsList.getThings());
-        nameColumn.setCellValueFactory(new PropertyValueFactory<CreateThings, String>("nameReceiver"));
-        roomNumberColumn.setCellValueFactory(new PropertyValueFactory<CreateThings, String>("roomNumber"));
-        typeColumn.setCellValueFactory(new PropertyValueFactory<CreateThings, String>("type"));
-        dateColumn.setCellValueFactory(new PropertyValueFactory<CreateThings, String>("date"));
+        ObservableList<Thing> thingsObservableList = FXCollections.observableArrayList(thingsList.getThings());
+        nameColumn.setCellValueFactory(new PropertyValueFactory<Thing, String>("nameReceiver"));
+        roomNumberColumn.setCellValueFactory(new PropertyValueFactory<Thing, String>("roomNumber"));
+        typeColumn.setCellValueFactory(new PropertyValueFactory<Thing, String>("type"));
+        dateColumn.setCellValueFactory(new PropertyValueFactory<Thing, String>("date"));
         if (typeColumn.getSortType().equals("จดหมาย")){
-            otherColumn.setCellValueFactory(new PropertyValueFactory<CreateThings, String>("-"));
+            otherColumn.setCellValueFactory(new PropertyValueFactory<Thing, String>("-"));
         }
         else if (typeColumn.getSortType().equals("เอกสาร")){
-            otherColumn.setCellValueFactory(new PropertyValueFactory<CreateThings, String>("important"));
+            otherColumn.setCellValueFactory(new PropertyValueFactory<Thing, String>("important"));
         }
         else if (typeColumn.getSortType().equals("พัสดุ")){
-            otherColumn.setCellValueFactory(new PropertyValueFactory<CreateThings, String>("trackingNumber"));
+            otherColumn.setCellValueFactory(new PropertyValueFactory<Thing, String>("trackingNumber"));
         }
-        staffControlColumn.setCellValueFactory(new PropertyValueFactory<CreateThings, String>("staffName"));
+        staffControlColumn.setCellValueFactory(new PropertyValueFactory<Thing, String>("staffName"));
         dateColumn.setSortType(TableColumn.SortType.DESCENDING);
         manageTable.setItems(thingsObservableList);
     }
@@ -88,14 +87,21 @@ public class Manage {
         stage.show();
     }
     @FXML public void handleReceiveButton(ActionEvent event) throws IOException {
-        ObservableList<CreateThings> allThings;
+        ObservableList<Thing> allThings;
         allThings = manageTable.getItems();
-        CreateThings thingSelect = manageTable.getSelectionModel().getSelectedItem();
-        successThingsList.addMailAndOther(thingSelect);
-        successThingsFile.setSuccessMailAndOtherList(successThingsList);
-        thingsList.removeThings(thingSelect);
+        Thing thingSelect = manageTable.getSelectionModel().getSelectedItem();
+        thingSelect.setDate(localDateTime.format(dateTimeFormatter));
+        successThingsList.addThing(thingSelect);
+        successThingsFile.setThingsList(successThingsList);
+        thingsList.removeThing(thingSelect);
         thingsFile.setThingsList(thingsList);
-        manageTable.refresh();
+        Button b = (Button) event.getSource();
+        Stage stage = (Stage) b.getScene().getWindow();
+        FXMLLoader loader = new FXMLLoader(getClass().getResource("/fxmlFile/manage.fxml"));
+
+        stage.setScene(new Scene(loader.load(),600,600));
+        Manage l = loader.getController();
+        stage.show();
         manageTable.getSelectionModel().clearSelection();
     }
     @FXML public void handleLogoutButton(ActionEvent event) throws IOException {

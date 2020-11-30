@@ -1,5 +1,6 @@
 package project.controllers;
 
+import javafx.application.Platform;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
@@ -10,14 +11,14 @@ import javafx.scene.control.PasswordField;
 import javafx.scene.control.TextField;
 import javafx.stage.Stage;
 import project.manageData.ManageGuestFile;
-import project.models.guest.GuestList;
+import project.models.GuestAccount;
 
 import java.io.IOException;
 
 public class LoginGuest {
     private String username;
     private String password;
-    private GuestList guestList;
+    private GuestAccount guestAccount,guestList;
     private ManageGuestFile guestData;
     private LoginSuccessGuest nextPage;
 
@@ -28,22 +29,28 @@ public class LoginGuest {
     @FXML private Button newGuestAccountButton;
     @FXML private Label alertLabel;
 
-    @FXML public void initialize(){
-        guestData = new ManageGuestFile("data", "guestAccount.csv");
-        guestList = guestData.getGuestList();
+    @FXML
+    public void initialize() {
+        Platform.runLater((Runnable)new Runnable() {
+            @Override
+            public void run() {
+                guestData = new ManageGuestFile("data", "guestAccount.csv");
+                guestList = guestData.getGuestList();
+            }
+        });
     }
     @FXML public void handleLoginGuestButton(ActionEvent event) throws IOException {
         username = usernameField.getText();
         password = passwordField.getText();
-        if (!(username.equals("") && password.equals(""))) {
-            if (guestList.checkUsernameGuestWhenLogin(username)) {
+        if (!(username.equals("") || password.equals(""))) {
+            if (guestList.checkUsername(username)) {
                 Button b = (Button) event.getSource();
                 Stage stage = (Stage) b.getScene().getWindow();
                 FXMLLoader loader = new FXMLLoader(getClass().getResource("/fxmlFile/login_success_guest.fxml"));
 
                 stage.setScene(new Scene(loader.load(), 600, 600));
                 LoginSuccessGuest l = loader.getController();
-                l.setNameGuest(username,guestList.getNameGuest(username));
+                l.setNameGuest(username,guestList.getName(username));
                 stage.show();
             } else {
                 alertLabel.setText("ไม่มีบัญชีผู้ใช้นี้");

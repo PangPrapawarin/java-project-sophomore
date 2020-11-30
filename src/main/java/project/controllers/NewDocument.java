@@ -9,10 +9,9 @@ import javafx.stage.Stage;
 import project.manageData.ManageNewGuestInfoFile;
 import project.manageData.ManageStaffFile;
 import project.manageData.ManageThingsFile;
-import project.models.guest.GuestInfoList;
-import project.models.things.CreateThings;
-import project.models.things.ThingsList;
-import project.models.staff.StaffList;
+import project.models.Condo;
+import project.models.StaffAccount;
+import project.models.Thing;
 
 import java.io.IOException;
 import java.time.LocalDateTime;
@@ -28,12 +27,12 @@ public class NewDocument {
     private LocalDateTime localDateTime = LocalDateTime.now();
     private DateTimeFormatter dateTimeFormatter = DateTimeFormatter.ofPattern("dd/MM/yyyy HH:mm:ss");
     private String levelImportant;
-    private ThingsList documentsList;
+    private Thing documentsList;
     private ManageThingsFile documentFile;
+    private Condo condo,guestInfoList;
     private ManageStaffFile staffFile;
-    private StaffList staffList;
+    private StaffAccount staffAccount,staffList;
     private ManageNewGuestInfoFile guestInfoFile;
-    private GuestInfoList guestInfoList;
 
     @FXML private TextField formField;
     @FXML private TextField nameSenderField;
@@ -114,8 +113,8 @@ public class NewDocument {
                 if (guestInfoList.checkHaveRoom(roomNumber)) {
                     if (guestInfoList.checkHaveNameGuest(nameReceiver)) {
                         if (staffList.checkHaveNameStaff(staffName)) {
-                            CreateThings document = new CreateThings("เอกสาร", form, nameSender, nameReceiver, roomNumber, localDateTime.format(dateTimeFormatter), staffName, size, "-", "-", levelImportant);
-                            documentsList.addThings(document);
+                            Thing document = new Thing("เอกสาร", form, nameSender, nameReceiver, roomNumber, localDateTime.format(dateTimeFormatter), staffName, size, "-", "-", levelImportant);
+                            documentsList.addThing(document);
                             documentFile.setThingsList(documentsList);
                             Button b = (Button) event.getSource();
                             Stage stage = (Stage) b.getScene().getWindow();

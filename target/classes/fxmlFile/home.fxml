@@ -5,34 +5,34 @@
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="600.0" prefWidth="600.0" style="-fx-background-color: #cee8f0;" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="project.controllers.Home">
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="600.0" prefWidth="600.0" style="-fx-background-color: #eeded2;" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="project.controllers.Home">
    <children>
-      <Label layoutX="98.0" layoutY="87.0" text="บันทึกการรับ-ส่งจดหมาย / เอกสาร / พัสดุ">
+      <Label layoutX="98.0" layoutY="87.0" text="บันทึกการรับ-ส่งจดหมาย / เอกสาร / พัสดุ" textFill="#8a6557">
          <font>
             <Font name="Chonburi" size="20.0" />
          </font>
       </Label>
-      <Button fx:id="loginStaffButton" layoutX="225.0" layoutY="215.0" mnemonicParsing="false" onAction="#handleLoginStaffButton" text="เข้าสู่ระบบ (สำหรับเจ้าหน้าที่)">
+      <Button fx:id="loginStaffButton" layoutX="225.0" layoutY="215.0" mnemonicParsing="false" onAction="#handleLoginStaffButton" text="เข้าสู่ระบบ (สำหรับเจ้าหน้าที่)" textFill="#8a6557">
          <font>
             <Font name="FC Active Light Italic" size="16.0" />
          </font>
       </Button>
-      <Button fx:id="loginGuestButton" layoutX="221.0" layoutY="281.0" mnemonicParsing="false" onAction="#handleLoginGuestButton" text="เข้าสู่ระบบ (สำหรับผู้พักอาศัย)">
+      <Button fx:id="loginGuestButton" layoutX="221.0" layoutY="281.0" mnemonicParsing="false" onAction="#handleLoginGuestButton" text="เข้าสู่ระบบ (สำหรับผู้พักอาศัย)" textFill="#8a6557">
          <font>
             <Font name="FC Active Light Italic" size="16.0" />
          </font>
       </Button>
-      <Button fx:id="loginAdminButton" layoutX="220.0" layoutY="357.0" mnemonicParsing="false" onAction="#handleLoginAdminButton" text="เข้าสู่ระบบ (สำหรับผู้ดูแลระบบ)">
+      <Button fx:id="loginAdminButton" layoutX="220.0" layoutY="357.0" mnemonicParsing="false" onAction="#handleLoginAdminButton" text="เข้าสู่ระบบ (สำหรับผู้ดูแลระบบ)" textFill="#8a6557">
          <font>
             <Font name="FC Active Light Italic" size="16.0" />
          </font>
       </Button>
-      <Button fx:id="infoButton" layoutX="14.0" layoutY="563.0" mnemonicParsing="false" onAction="#handleRecommendButton" text="คำแนะนำในการใช้">
+      <Button fx:id="infoButton" layoutX="14.0" layoutY="563.0" mnemonicParsing="false" onAction="#handleRecommendButton" text="คำแนะนำในการใช้" textFill="#8a6557">
          <font>
             <Font name="FC Active Light Italic" size="13.0" />
          </font>
       </Button>
-      <Button fx:id="producerButton" layoutX="540.0" layoutY="563.0" mnemonicParsing="false" onAction="#handleInfoNisitButton" text="ผู้จัดทำ">
+      <Button fx:id="producerButton" layoutX="540.0" layoutY="563.0" mnemonicParsing="false" onAction="#handleInfoNisitButton" text="ผู้จัดทำ" textFill="#8a6557">
          <font>
             <Font name="FC Active Light Italic" size="13.0" />
          </font>

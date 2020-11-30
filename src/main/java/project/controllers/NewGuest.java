@@ -10,9 +10,7 @@ import javafx.scene.control.Label;
 import javafx.scene.control.TextField;
 import javafx.stage.Stage;
 import project.manageData.ManageNewGuestInfoFile;
-import project.models.guest.Condo;
-import project.models.guest.GuestInfoList;
-import project.models.guest.NewGuestInfo;
+import project.models.Condo;
 
 import java.io.IOException;
 
@@ -23,10 +21,8 @@ public class NewGuest {
     private String buildingNumber;
     private String typeRoom;
     private String people;
-    private NewGuestInfo guestInfo;
-    private GuestInfoList guestInfoList;
     private ManageNewGuestInfoFile guestInfoFile;
-    private Condo condo;
+    private Condo condo,guestInfoList;
 
     @FXML private TextField roomNumberField;
     @FXML private TextField floorNumberField;
@@ -69,14 +65,13 @@ public class NewGuest {
         floorNumber = floorNumberField.getText();
         buildingNumber = buildingNumberField.getText();
         people = guestNumberField.getText();
-        condo = new Condo();
         if (!(guestName.equals("")||roomNumber.equals("")||floorNumber.equals("")||buildingNumber.equals("")||typeRoom.equals("")||people.equals(""))) {
-            if (condo.checkRoomCondo(buildingNumber, floorNumber, roomNumber)  && roomNumber.length() == 4) {
-                if (condo.checkBuildingNumber(Integer.parseInt(buildingNumber))) {
-                    if (condo.checkFloorNumber(Integer.parseInt(floorNumber))) {
+            if (guestInfoList.checkRoomCondo(buildingNumber, floorNumber, roomNumber)  && roomNumber.length() == 4) {
+                if (guestInfoList.checkBuildingNumber(Integer.parseInt(buildingNumber))) {
+                    if (guestInfoList.checkFloorNumber(Integer.parseInt(floorNumber))) {
                         if (!(guestInfoList.checkHaveRoom(roomNumber))) {
-                            if (condo.checkRoomTypeGuest(typeRoom, people)) {
-                                NewGuestInfo info = new NewGuestInfo(roomNumber, floorNumber, buildingNumber, typeRoom, guestName, people);
+                            if (guestInfoList.checkRoomTypeGuest(typeRoom, people)) {
+                                Condo info = new Condo(roomNumber, floorNumber, buildingNumber, typeRoom, guestName, people);
                                 guestInfoList.addGuestInfo(info);
                                 guestInfoFile.setGuestInfoList(guestInfoList);
                                 Button b = (Button) event.getSource();

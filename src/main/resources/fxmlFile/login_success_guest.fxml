@@ -5,14 +5,14 @@
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="600.0" prefWidth="600.0" style="-fx-background-color: #cee8f0;" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="project.controllers.LoginSuccessGuest">
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="600.0" prefWidth="600.0" style="-fx-background-color: #eeded2;" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="project.controllers.LoginSuccessGuest">
    <children>
-      <Label layoutX="233.0" layoutY="184.0" lineSpacing="4.0" text="ชื่อผู้พักอาศัย" textAlignment="CENTER">
+      <Label layoutX="241.0" layoutY="185.0" lineSpacing="4.0" text="ผู้พักอาศัย" textAlignment="CENTER" textFill="#8a6557">
          <font>
             <Font name="Chonburi" size="20.0" />
          </font>
       </Label>
-      <Button fx:id="logoutButton" layoutX="531.0" layoutY="563.0" mnemonicParsing="false" onAction="#handleLogoutButton" text="ลงชื่อออก">
+      <Button fx:id="logoutButton" layoutX="531.0" layoutY="563.0" mnemonicParsing="false" onAction="#handleLogoutButton" text="ลงชื่อออก" textFill="#8a6557">
          <font>
             <Font name="FC Active Light Italic" size="13.0" />
          </font>
@@ -27,7 +27,7 @@
             <Font name="FC Active Light Italic" size="18.0" />
          </font>
       </Label>
-      <Button fx:id="successReceiveButton" layoutX="228.0" layoutY="323.0" mnemonicParsing="false" onAction="#handleSuccessReceiveButton" text="จดหมาย/เอกสาร/พัสดุที่รับแล้ว">
+      <Button fx:id="successReceiveButton" layoutX="228.0" layoutY="323.0" mnemonicParsing="false" onAction="#handleSuccessReceiveButton" text="จดหมาย/เอกสาร/พัสดุที่รับแล้ว" textFill="#8a6557">
          <font>
             <Font name="FC Active Light Italic" size="13.0" />
          </font>

@@ -8,84 +8,84 @@
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane prefHeight="600.0" prefWidth="600.0" style="-fx-background-color: #cee8f0;" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="project.controllers.NewDocument">
+<AnchorPane prefHeight="600.0" prefWidth="600.0" style="-fx-background-color: #eeded2;" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="project.controllers.NewDocument">
    <children>
-      <Label layoutX="208.0" layoutY="66.0" lineSpacing="4.0" text="สร้างรายละเอียด&#10;เอกสารใหม่" textAlignment="CENTER">
+      <Label layoutX="208.0" layoutY="66.0" lineSpacing="4.0" text="สร้างรายละเอียด&#10;เอกสารใหม่" textAlignment="CENTER" textFill="#8a6557">
          <font>
             <Font name="Chonburi" size="20.0" />
          </font>
       </Label>
-      <Button fx:id="previousButton" layoutX="14.0" layoutY="563.0" mnemonicParsing="false" onAction="#handlePreviousButton" text="ย้อนกลับ">
+      <Button fx:id="previousButton" layoutX="14.0" layoutY="563.0" mnemonicParsing="false" onAction="#handlePreviousButton" text="ย้อนกลับ" textFill="#8a6557">
          <font>
             <Font name="FC Active Light Italic" size="13.0" />
          </font>
       </Button>
-      <Button fx:id="logoutButton" layoutX="531.0" layoutY="563.0" mnemonicParsing="false" onAction="#handleLogoutButton" text="ลงชื่อออก">
+      <Button fx:id="logoutButton" layoutX="531.0" layoutY="563.0" mnemonicParsing="false" onAction="#handleLogoutButton" text="ลงชื่อออก" textFill="#8a6557">
          <font>
             <Font name="FC Active Light Italic" size="13.0" />
          </font>
       </Button>
-      <Button fx:id="confirmButton" layoutX="268.0" layoutY="494.0" mnemonicParsing="false" onAction="#handleConfirmButton" text="ยืนยัน">
+      <Button fx:id="confirmButton" layoutX="268.0" layoutY="494.0" mnemonicParsing="false" onAction="#handleConfirmButton" text="ยืนยัน" textFill="#8a6557">
          <font>
             <Font name="FC Active Light Italic" size="14.0" />
          </font>
       </Button>
-      <Label layoutX="194.0" layoutY="167.0" text="ที่อยู่ผู้ส่ง :">
+      <Label layoutX="194.0" layoutY="174.0" text="ที่อยู่ผู้ส่ง :" textFill="#8a6557">
          <font>
             <Font name="FC Active Light Italic" size="16.0" />
          </font>
       </Label>
-      <Label layoutX="200.0" layoutY="246.0" text="ชื่อผู้รับ :">
+      <Label layoutX="200.0" layoutY="253.0" text="ชื่อผู้รับ :" textFill="#8a6557">
          <font>
             <Font name="FC Active Light Italic" size="16.0" />
          </font>
       </Label>
-      <TextField fx:id="formField" layoutX="249.0" layoutY="162.0" promptText="from" />
-      <Label layoutX="180.0" layoutY="287.0" text="ห้องพักผู้รับ :">
+      <TextField fx:id="formField" layoutX="249.0" layoutY="169.0" promptText="from" />
+      <Label layoutX="180.0" layoutY="294.0" text="ห้องพักผู้รับ :" textFill="#8a6557">
          <font>
             <Font name="FC Active Light Italic" size="16.0" />
          </font>
       </Label>
-      <Label layoutX="162.0" layoutY="367.0" text="ชื่อเจ้าหน้าที่ที่รับ :">
+      <Label layoutX="162.0" layoutY="374.0" text="ชื่อเจ้าหน้าที่ที่รับ :" textFill="#8a6557">
          <font>
             <Font name="FC Active Light Italic" size="16.0" />
          </font>
       </Label>
-      <TextField fx:id="nameReceiverField" layoutX="249.0" layoutY="242.0" promptText="name receiver" />
-      <TextField fx:id="roomNumberField" layoutX="249.0" layoutY="283.0" promptText="room number" />
-      <TextField fx:id="staffNameField" layoutX="249.0" layoutY="363.0" promptText="staff name" />
-      <Label layoutX="200.0" layoutY="204.0" text="ชื่อผู้ส่ง :">
+      <TextField fx:id="nameReceiverField" layoutX="249.0" layoutY="249.0" promptText="name receiver" />
+      <TextField fx:id="roomNumberField" layoutX="249.0" layoutY="290.0" promptText="room number" />
+      <TextField fx:id="staffNameField" layoutX="249.0" layoutY="370.0" promptText="staff name" />
+      <Label layoutX="200.0" layoutY="211.0" text="ชื่อผู้ส่ง :" textFill="#8a6557">
          <font>
             <Font name="FC Active Light Italic" size="16.0" />
          </font>
       </Label>
-      <TextField fx:id="nameSenderField" layoutX="249.0" layoutY="200.0" promptText="name sender" />
-      <Label layoutX="208.0" layoutY="404.0" text="ขนาด :">
+      <TextField fx:id="nameSenderField" layoutX="249.0" layoutY="207.0" promptText="name sender" />
+      <Label layoutX="208.0" layoutY="411.0" text="ขนาด :" textFill="#8a6557">
          <font>
             <Font name="FC Active Light Italic" size="16.0" />
          </font>
       </Label>
-      <CheckBox fx:id="choiceBoxSmall" layoutX="250.0" layoutY="402.0" mnemonicParsing="false" onAction="#setChoiceBoxSmall" text="เล็ก">
+      <CheckBox fx:id="choiceBoxSmall" layoutX="250.0" layoutY="409.0" mnemonicParsing="false" onAction="#setChoiceBoxSmall" text="เล็ก" textFill="#8a6557">
          <font>
             <Font name="FC Active Light Italic" size="16.0" />
          </font>
       </CheckBox>
-      <CheckBox fx:id="choiceBoxMedium" layoutX="306.0" layoutY="402.0" mnemonicParsing="false" onAction="#setChoiceBoxMedium" text="กลาง">
+      <CheckBox fx:id="choiceBoxMedium" layoutX="306.0" layoutY="409.0" mnemonicParsing="false" onAction="#setChoiceBoxMedium" text="กลาง" textFill="#8a6557">
          <font>
             <Font name="FC Active Light Italic" size="16.0" />
          </font>
       </CheckBox>
-      <CheckBox fx:id="choiceBoxBig" layoutX="374.0" layoutY="402.0" mnemonicParsing="false" onAction="#setChoiceBoxBig" text="ใหญ่">
+      <CheckBox fx:id="choiceBoxBig" layoutX="374.0" layoutY="409.0" mnemonicParsing="false" onAction="#setChoiceBoxBig" text="ใหญ่" textFill="#8a6557">
          <font>
             <Font name="FC Active Light Italic" size="16.0" />
          </font>
       </CheckBox>
-      <Label layoutX="157.0" layoutY="326.0" text="ระดับความสำคัญ :">
+      <Label layoutX="157.0" layoutY="333.0" text="ระดับความสำคัญ :" textFill="#8a6557">
          <font>
             <Font name="FC Active Light Italic" size="16.0" />
          </font>
       </Label>
-      <ChoiceBox fx:id="importantLevel" layoutX="249.0" layoutY="322.0" prefWidth="150.0" />
+      <ChoiceBox fx:id="importantLevel" layoutX="249.0" layoutY="329.0" prefWidth="150.0" />
       <Label fx:id="alertLabel" layoutX="208.0" layoutY="458.0" prefHeight="17.0" prefWidth="164.0" textFill="#c30000">
          <font>
             <Font name="FC Active Light Italic" size="16.0" />

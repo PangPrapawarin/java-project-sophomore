@@ -10,20 +10,18 @@ import javafx.scene.control.*;
 import javafx.scene.control.cell.PropertyValueFactory;
 import javafx.stage.Stage;
 import project.manageData.ManageNewGuestInfoFile;
-import project.models.guest.GuestInfoList;
-import project.models.guest.NewGuestInfo;
+import project.models.Condo;
 
 import java.io.IOException;
 
 public class DetailRoom {
     private String nameSearch;
-    private GuestInfoList guestInfoList;
-    private NewGuestInfo guestInfo;
+    private Condo guestInfo,guestInfoList;
     private LoginStaff loginStaff;
     private ManageNewGuestInfoFile guestInfoFile;
-    private ObservableList<NewGuestInfo> guestInfoObservableList;
+    private ObservableList<Condo> guestInfoObservableList;
 
-    @FXML private TableColumn<NewGuestInfo, String> nameColumn,roomNumberColumn,floorColumn,buildingColumn,roomTypeColumn,amountColumn;
+    @FXML private TableColumn<Condo, String> nameColumn,roomNumberColumn,floorColumn,buildingColumn,roomTypeColumn,amountColumn;
     @FXML private TextField guestNameSearchField;
     @FXML private TableView guestTable;
     @FXML private Button searchButton;
@@ -39,12 +37,12 @@ public class DetailRoom {
     }
     private void showGuestInfoList() {
         guestInfoObservableList = FXCollections.observableArrayList(guestInfoList.getGuestInfoList());
-        nameColumn.setCellValueFactory(new PropertyValueFactory<NewGuestInfo, String>("name"));
-        roomNumberColumn.setCellValueFactory(new PropertyValueFactory<NewGuestInfo, String>("roomNumber"));
-        floorColumn.setCellValueFactory(new PropertyValueFactory<NewGuestInfo, String>("floorNumber"));
-        buildingColumn.setCellValueFactory(new PropertyValueFactory<NewGuestInfo, String>("buildingNumber"));
-        roomTypeColumn.setCellValueFactory(new PropertyValueFactory<NewGuestInfo, String>("roomType"));
-        amountColumn.setCellValueFactory(new PropertyValueFactory<NewGuestInfo, String>("people"));
+        nameColumn.setCellValueFactory(new PropertyValueFactory<Condo, String>("name"));
+        roomNumberColumn.setCellValueFactory(new PropertyValueFactory<Condo, String>("roomNumber"));
+        floorColumn.setCellValueFactory(new PropertyValueFactory<Condo, String>("floorNumber"));
+        buildingColumn.setCellValueFactory(new PropertyValueFactory<Condo, String>("buildingNumber"));
+        roomTypeColumn.setCellValueFactory(new PropertyValueFactory<Condo, String>("roomType"));
+        amountColumn.setCellValueFactory(new PropertyValueFactory<Condo, String>("people"));
         guestTable.setItems(guestInfoObservableList);
     }
     @FXML public void handleSearchButton(ActionEvent event) throws IOException {

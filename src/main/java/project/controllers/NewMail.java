@@ -9,10 +9,9 @@ import javafx.stage.Stage;
 import project.manageData.ManageNewGuestInfoFile;
 import project.manageData.ManageStaffFile;
 import project.manageData.ManageThingsFile;
-import project.models.guest.GuestInfoList;
-import project.models.things.CreateThings;
-import project.models.things.ThingsList;
-import project.models.staff.StaffList;
+import project.models.Condo;
+import project.models.StaffAccount;
+import project.models.Thing;
 
 import java.io.IOException;
 import java.time.LocalDateTime;
@@ -27,12 +26,12 @@ public class NewMail {
     private String size;
     private LocalDateTime localDateTime = LocalDateTime.now();
     private DateTimeFormatter dateTimeFormatter = DateTimeFormatter.ofPattern("dd/MM/yyyy HH:mm:ss");
-    private ThingsList thingsList;
+    private Thing thingsList;
     private ManageThingsFile mailsFile;
     private ManageStaffFile staffFile;
-    private StaffList staffList;
+    private StaffAccount staffAccount,staffList;
     private ManageNewGuestInfoFile guestInfoFile;
-    private GuestInfoList guestInfoList;
+    private Condo condo,guestInfoList;
 
     @FXML private TextField formField;
     @FXML private TextField nameSenderField;
@@ -88,8 +87,8 @@ public class NewMail {
                 if (guestInfoList.checkHaveRoom(roomNumber)) {
                     if (guestInfoList.checkHaveNameGuest(nameReceiver)) {
                         if (staffList.checkHaveNameStaff(staffName)) {
-                            CreateThings mail = new CreateThings("จดหมาย", form, nameSender, nameReceiver, roomNumber,localDateTime.format(dateTimeFormatter), staffName, size, "-", "-", "-");
-                            thingsList.addThings(mail);
+                            Thing mail = new Thing("จดหมาย", form, nameSender, nameReceiver, roomNumber,localDateTime.format(dateTimeFormatter), staffName, size, "-", "-", "-");
+                            thingsList.addThing(mail);
                             mailsFile.setThingsList(thingsList);
                             Button b = (Button) event.getSource();
                             Stage stage = (Stage) b.getScene().getWindow();

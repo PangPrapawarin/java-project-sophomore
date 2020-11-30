@@ -10,14 +10,14 @@ import javafx.scene.control.PasswordField;
 import javafx.scene.control.TextField;
 import javafx.stage.Stage;
 import project.manageData.ManageAdminFile;
-import project.models.admin.AdminList;
+import project.models.AdminAccount;
 
 import java.io.IOException;
 
 public class LoginAdmin {
     private String username;
     private String password;
-    private AdminList adminList;
+    private AdminAccount adminAccount,adminList;
     private ManageAdminFile adminData;
 
     @FXML private TextField usernameField;
@@ -34,7 +34,7 @@ public class LoginAdmin {
         username = usernameField.getText();
         password = passwordField.getText();
         if (!(username.equals("")||password.equals(""))) {
-            if (adminList.checkAdminAccount(username,password)){
+            if (adminList.checkAccount(username,password)){
                 Button b = (Button) event.getSource();
                 Stage stage = (Stage) b.getScene().getWindow();
                 FXMLLoader loader = new FXMLLoader(getClass().getResource("/fxmlFile/login_success_admin.fxml"));

@@ -10,8 +10,8 @@ import javafx.scene.control.PasswordField;
 import javafx.scene.control.TextField;
 import javafx.stage.Stage;
 import project.manageData.ManageStaffFile;
-import project.models.staff.StaffCreateAccount;
-import project.models.staff.StaffList;
+import project.models.AdminAccount;
+import project.models.StaffAccount;
 
 import java.io.IOException;
 
@@ -21,8 +21,7 @@ public class RegisterStaff {
     private String password;
     private String confirmPassword;
     private String time;
-    private StaffCreateAccount staffAccount;
-    private StaffList staffList;
+    private StaffAccount staffAccount,staffList;
     private ManageStaffFile staffData;
 
     @FXML private TextField staffNameField;
@@ -53,9 +52,9 @@ public class RegisterStaff {
         confirmPassword = confirmPasswordField.getText();
         if (!(name.equals("")||username.equals("")||password.equals("")||confirmPassword.equals(""))){
             if (password.equals(confirmPassword)){
-                if (!(staffList.checkUsernameStaff(username))) {
-                    StaffCreateAccount staffAccount = new StaffCreateAccount(name,username,password,confirmPassword,"allow","-");
-                    staffList.addStaff(staffAccount);
+                if (!(staffList.checkUsername(username))) {
+                    AdminAccount staffAccount = new StaffAccount(name,username,password,confirmPassword,"allow","-");
+                    staffList.addAccount(staffAccount);
                     staffData.setStaffs(staffList);
                     Button b = (Button) event.getSource();
                     Stage stage = (Stage) b.getScene().getWindow();

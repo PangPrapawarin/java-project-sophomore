@@ -7,14 +7,14 @@
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="600.0" prefWidth="600.0" style="-fx-background-color: #cee8f0;" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="project.controllers.Manage">
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="600.0" prefWidth="600.0" style="-fx-background-color: #eeded2;" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="project.controllers.Manage">
    <children>
-      <Label layoutX="179.0" layoutY="64.0" lineSpacing="4.0" text="จดหมาย / เอกสาร / พัสดุ" textAlignment="CENTER">
+      <Label layoutX="179.0" layoutY="64.0" lineSpacing="4.0" text="จดหมาย / เอกสาร / พัสดุ" textAlignment="CENTER" textFill="#8a6557">
          <font>
             <Font name="Chonburi" size="20.0" />
          </font>
       </Label>
-      <Button fx:id="logoutButton" layoutX="531.0" layoutY="563.0" mnemonicParsing="false" onAction="#handleLogoutButton" text="ลงชื่อออก">
+      <Button fx:id="logoutButton" layoutX="531.0" layoutY="563.0" mnemonicParsing="false" onAction="#handleLogoutButton" text="ลงชื่อออก" textFill="#8a6557">
          <font>
             <Font name="FC Active Light Italic" size="13.0" />
          </font>
@@ -27,22 +27,22 @@
             <TableColumn fx:id="dateColumn" prefWidth="163.33331298828125" text="date" />
             <TableColumn fx:id="staffControlColumn" prefWidth="110.66668701171875" text="staff control" />
          </columns></TableView>
-      <Button fx:id="previousButton" layoutX="14.0" layoutY="563.0" mnemonicParsing="false" onAction="#handlePreviousButton" text="ย้อนกลับ">
+      <Button fx:id="previousButton" layoutX="14.0" layoutY="563.0" mnemonicParsing="false" onAction="#handlePreviousButton" text="ย้อนกลับ" textFill="#8a6557">
          <font>
             <Font name="FC Active Light Italic" size="13.0" />
          </font>
       </Button>
-      <Button fx:id="newManageButton" layoutX="31.0" layoutY="474.0" mnemonicParsing="false" onAction="#handleNewManageButton" text="สร้างรายละเอียดจดหมาย/เอกสาร/พัสดุ">
+      <Button fx:id="newManageButton" layoutX="31.0" layoutY="474.0" mnemonicParsing="false" onAction="#handleNewManageButton" text="สร้างรายละเอียดจดหมาย/เอกสาร/พัสดุ" textFill="#8a6557">
          <font>
             <Font name="FC Active Light Italic" size="13.0" />
          </font>
       </Button>
-      <Button fx:id="successReceiveButton" layoutX="204.0" layoutY="474.0" mnemonicParsing="false" onAction="#handleSuccessReceiveButton" text="จดหมาย/เอกสาร/พัสดุที่รับไปแล้ว">
+      <Button fx:id="successReceiveButton" layoutX="204.0" layoutY="474.0" mnemonicParsing="false" onAction="#handleSuccessReceiveButton" text="จดหมาย/เอกสาร/พัสดุที่รับไปแล้ว" textFill="#8a6557">
          <font>
             <Font name="FC Active Light Italic" size="13.0" />
          </font>
       </Button>
-      <Button fx:id="receiveButton" layoutX="526.0" layoutY="474.0" mnemonicParsing="false" onAction="#handleReceiveButton" text="รับแล้ว">
+      <Button fx:id="receiveButton" layoutX="526.0" layoutY="474.0" mnemonicParsing="false" onAction="#handleReceiveButton" text="รับแล้ว" textFill="#8a6557">
          <font>
             <Font name="FC Active Light Italic" size="13.0" />
          </font>

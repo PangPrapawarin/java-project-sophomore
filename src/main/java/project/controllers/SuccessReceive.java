@@ -11,34 +11,32 @@ import javafx.scene.control.TableColumn;
 import javafx.scene.control.TableView;
 import javafx.scene.control.cell.PropertyValueFactory;
 import javafx.stage.Stage;
-import project.manageData.ManageSuccessThingsFile;
-import project.models.things.CreateThings;
-import project.models.things.SuccessMailAndOtherList;
+import project.manageData.ManageThingsFile;
+import project.models.Thing;
 
 import java.io.IOException;
 
 public class SuccessReceive {
-    private SuccessMailAndOtherList successMailAndOtherList;
-    private CreateThings things;
-    private ManageSuccessThingsFile successThingsFile;
+    private Thing thing,successThingsList;
+    private ManageThingsFile successThingsFile;
 
-    @FXML private TableColumn<CreateThings, String> nameColumn,roomNumberColumn,typeColumn,dateColumn,staffControlColumn;
-    @FXML private TableView<CreateThings> successReceiveTable;
+    @FXML private TableColumn<Thing, String> nameColumn,roomNumberColumn,typeColumn,dateColumn,staffControlColumn;
+    @FXML private TableView<Thing> successReceiveTable;
     @FXML private Button previousButton;
     @FXML private Button logoutButton;
 
     @FXML public void initialize(){
-        successThingsFile = new ManageSuccessThingsFile("data", "successThingsList.csv");
-        successMailAndOtherList = successThingsFile.getSuccessMailAndOtherList();
+        successThingsFile = new ManageThingsFile("data", "successThingsList.csv");
+        successThingsList = successThingsFile.getThingsList();
         showSuccessThingsList();
     }
     private void showSuccessThingsList() {
-        ObservableList<CreateThings> thingsObservableList = FXCollections.observableArrayList(successMailAndOtherList.getSuccessMailAndOther());
-        nameColumn.setCellValueFactory(new PropertyValueFactory<CreateThings, String>("nameReceiver"));
-        roomNumberColumn.setCellValueFactory(new PropertyValueFactory<CreateThings, String>("roomNumber"));
-        typeColumn.setCellValueFactory(new PropertyValueFactory<CreateThings, String>("type"));
-        dateColumn.setCellValueFactory(new PropertyValueFactory<CreateThings, String>("date"));
-        staffControlColumn.setCellValueFactory(new PropertyValueFactory<CreateThings, String>("staffName"));
+        ObservableList<Thing> thingsObservableList = FXCollections.observableArrayList(successThingsList.getThings());
+        nameColumn.setCellValueFactory(new PropertyValueFactory<Thing, String>("nameReceiver"));
+        roomNumberColumn.setCellValueFactory(new PropertyValueFactory<Thing, String>("roomNumber"));
+        typeColumn.setCellValueFactory(new PropertyValueFactory<Thing, String>("type"));
+        dateColumn.setCellValueFactory(new PropertyValueFactory<Thing, String>("date"));
+        staffControlColumn.setCellValueFactory(new PropertyValueFactory<Thing, String>("staffName"));
         successReceiveTable.setItems(thingsObservableList);
     }
     @FXML public void handlePreviousButton(ActionEvent event) throws IOException {

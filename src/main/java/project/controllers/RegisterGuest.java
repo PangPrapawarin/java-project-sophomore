@@ -11,10 +11,9 @@ import javafx.scene.control.TextField;
 import javafx.stage.Stage;
 import project.manageData.ManageGuestFile;
 import project.manageData.ManageNewGuestInfoFile;
-import project.models.guest.GuestCreateAccount;
-import project.models.guest.GuestInfoList;
-import project.models.guest.GuestList;
-import project.models.guest.NewGuestInfo;
+import project.models.AdminAccount;
+import project.models.GuestAccount;
+import project.models.Condo;
 
 import java.io.IOException;
 
@@ -23,11 +22,9 @@ public class RegisterGuest {
     private String username;
     private String password;
     private String confirmPassword;
-    private GuestCreateAccount guestAccount;
-    private GuestList guestList;
+    private GuestAccount guestAccount,guestList;
     private ManageGuestFile guestFile;
-    private NewGuestInfo guestInfoAccount;
-    private GuestInfoList guestInfoList;
+    private Condo condo,guestInfoList;
     private ManageNewGuestInfoFile guestInfoFile;
 
     @FXML private TextField nameField;
@@ -58,12 +55,12 @@ public class RegisterGuest {
         username = usernameField.getText();
         password = passwordField.getText();
         confirmPassword = confirmPasswordField.getText();
-        if (!(name.equals("")&&username.equals("")&&password.equals("")&&confirmPassword.equals(""))) {
+        if (!(name.equals("")||username.equals("")||password.equals("")||confirmPassword.equals(""))) {
             if (password.equals(confirmPassword)) {
                 if (guestInfoList.checkHaveNameGuest(name)) {
-                    if (guestList.checkUsernameGuest(username)) {
-                        GuestCreateAccount guestAccount = new GuestCreateAccount(name, username, password, confirmPassword);
-                        guestList.addGuest(guestAccount);
+                    if (!(guestList.checkUsername(username))) {
+                        AdminAccount guestAccount = new GuestAccount(name, username, password, confirmPassword);
+                        guestList.addAccount(guestAccount);
                         guestFile.setGuestList(guestList);
                         Button b = (Button) event.getSource();
                         Stage stage = (Stage) b.getScene().getWindow();

@@ -1,38 +1,20 @@
 package project.manageData;
 
-import project.models.things.CreateThings;
-import project.models.things.ThingsList;
+import project.models.Thing;
 
 import java.io.*;
-public class ManageThingsFile {
-    private String fileName;
-    private String fileDirectoryName;
-    private CreateThings createThings;
-    private ThingsList thingsList;
+
+public class ManageThingsFile extends ManageStaffFile {
+    private Thing thingsList;
 
     public ManageThingsFile(String fileDirectoryName, String fileName) {
-        this.fileName = fileName;
-        this.fileDirectoryName = fileDirectoryName;
-        checkFileData();
+        super(fileDirectoryName, fileName);
+        super.checkFileData();
     }
 
-    public void checkFileData(){
-        File file = new File(fileDirectoryName);
-        if (!file.exists()) {
-            file.mkdirs();
-        }
-        String filePath = fileDirectoryName + File.separator + fileName;
-        file = new File(filePath);
-        if (!file.exists()) {
-            try {
-                file.createNewFile();
-            } catch (IOException e) {
-                System.err.println("Failed to create " + filePath);
-            }
-        }
-    }
+    @Override
     public void readFileData() throws IOException {
-        String filePath = fileDirectoryName + File.separator + fileName;
+        String filePath = super.getFileDirectoryName() + File.separator + super.getFileName();
         File file = new File(filePath);
         FileReader fileReader = new FileReader(file);
         BufferedReader bufferedReader = new BufferedReader(fileReader);
@@ -40,32 +22,32 @@ public class ManageThingsFile {
 
         while((line = bufferedReader.readLine()) != null){
             String[] data = line.split(",");
-            CreateThings thing = new CreateThings(data[0].trim(), data[1].trim(),data[2].trim(),data[3].trim(),data[4].trim(),data[5].trim(),data[6].trim(),data[7].trim(),data[8].trim(),data[9].trim(),data[10].trim());
-            thingsList.addThings(thing);
+            Thing th = new Thing(data[0].trim(),data[1].trim(),data[2].trim(),data[3].trim(),data[4].trim(),data[5].trim(),data[6].trim(),data[7].trim(),data[8].trim(),data[9].trim(),data[10].trim());
+            thingsList.addThing(th);
         }
         bufferedReader.close();
     }
-    public ThingsList getThingsList() {
+    public Thing getThingsList() {
         try {
-            thingsList = new ThingsList();
+            thingsList = new Thing();
             readFileData();
         } catch (FileNotFoundException e) {
-            System.err.println(fileName + " not found.");
+            System.err.println(super.getFileName() + " not found.");
         } catch (IOException e){
-            System.err.println(fileName + " has error.");
+            System.err.println(super.getFileName() + " has error.");
         }
         return thingsList;
     }
 
-    public void setThingsList(ThingsList thingsList) {
-        String filePath = fileDirectoryName + File.separator + fileName;
+    public void setThingsList(Thing things) {
+        String filePath = super.getFileDirectoryName() + File.separator + super.getFileName();
         File file = new File(filePath);
         FileWriter fileWriter = null;
         try {
             fileWriter = new FileWriter(file);
             BufferedWriter writer = new BufferedWriter(fileWriter);
-            for (CreateThings things : thingsList.getThings()) {
-                String line = things.getType() + "," + things.getFrom() + "," + things.getNameSender() + "," + things.getNameReceiver() + "," + things.getRoomNumber() + "," + things.getDate() + "," + things.getStaffName() + "," + things.getSize() + "," + things.getService() + "," + things.getTrackingNumber() + "," + things.getImportant();
+            for (Thing th : things.getThings()) {
+                String line = th.getType() + "," + th.getFrom() + "," + th.getNameSender() + "," + th.getNameReceiver() + "," + th.getRoomNumber() + "," + th.getDate() + "," + th.getStaffName() + "," + th.getSize() + "," + th.getService() + "," + th.getTrackingNumber() + "," + th.getImportant();
                 writer.append(line);
                 writer.newLine();
             }

@@ -7,74 +7,74 @@
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="600.0" prefWidth="600.0" style="-fx-background-color: #cee8f0;" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="project.controllers.NewMail">
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="600.0" prefWidth="600.0" style="-fx-background-color: #eeded2;" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="project.controllers.NewMail">
    <children>
-      <Label layoutX="208.0" layoutY="64.0" lineSpacing="4.0" text="สร้างรายละเอียด&#10;จดหมายใหม่" textAlignment="CENTER">
+      <Label layoutX="208.0" layoutY="64.0" lineSpacing="4.0" text="สร้างรายละเอียด&#10;จดหมายใหม่" textAlignment="CENTER" textFill="#8a6557">
          <font>
             <Font name="Chonburi" size="20.0" />
          </font>
       </Label>
-      <Button fx:id="previousButton" layoutX="14.0" layoutY="563.0" mnemonicParsing="false" onAction="#handlePreviousButton" text="ย้อนกลับ">
+      <Button fx:id="previousButton" layoutX="14.0" layoutY="563.0" mnemonicParsing="false" onAction="#handlePreviousButton" text="ย้อนกลับ" textFill="#8a6557">
          <font>
             <Font name="FC Active Light Italic" size="13.0" />
          </font>
       </Button>
-      <Button fx:id="logoutButton" layoutX="531.0" layoutY="563.0" mnemonicParsing="false" onAction="#handleLogoutButton" text="ลงชื่อออก">
+      <Button fx:id="logoutButton" layoutX="531.0" layoutY="563.0" mnemonicParsing="false" onAction="#handleLogoutButton" text="ลงชื่อออก" textFill="#8a6557">
          <font>
             <Font name="FC Active Light Italic" size="13.0" />
          </font>
       </Button>
-      <Button fx:id="confirmButton" layoutX="268.0" layoutY="488.0" mnemonicParsing="false" onAction="#handleConfirmButton" text="ยืนยัน">
+      <Button fx:id="confirmButton" layoutX="268.0" layoutY="488.0" mnemonicParsing="false" onAction="#handleConfirmButton" text="ยืนยัน" textFill="#8a6557">
          <font>
             <Font name="FC Active Light Italic" size="14.0" />
          </font>
       </Button>
-      <Label layoutX="191.0" layoutY="178.0" text="ที่อยู่ผู้ส่ง :">
+      <Label layoutX="191.0" layoutY="193.0" text="ที่อยู่ผู้ส่ง :" textFill="#8a6557">
          <font>
             <Font name="FC Active Light Italic" size="16.0" />
          </font>
       </Label>
-      <Label layoutX="197.0" layoutY="257.0" text="ชื่อผู้รับ :">
+      <Label layoutX="197.0" layoutY="272.0" text="ชื่อผู้รับ :" textFill="#8a6557">
          <font>
             <Font name="FC Active Light Italic" size="16.0" />
          </font>
       </Label>
-      <TextField fx:id="formField" layoutX="246.0" layoutY="173.0" promptText="from" />
-      <Label layoutX="177.0" layoutY="298.0" text="ห้องพักผู้รับ :">
+      <TextField fx:id="formField" layoutX="246.0" layoutY="188.0" promptText="from" />
+      <Label layoutX="177.0" layoutY="313.0" text="ห้องพักผู้รับ :" textFill="#8a6557">
          <font>
             <Font name="FC Active Light Italic" size="16.0" />
          </font>
       </Label>
-      <Label layoutX="159.0" layoutY="340.0" text="ชื่อเจ้าหน้าที่ที่รับ :">
+      <Label layoutX="159.0" layoutY="355.0" text="ชื่อเจ้าหน้าที่ที่รับ :" textFill="#8a6557">
          <font>
             <Font name="FC Active Light Italic" size="16.0" />
          </font>
       </Label>
-      <TextField fx:id="nameReceiverField" layoutX="246.0" layoutY="253.0" promptText="name receiver" />
-      <TextField fx:id="roomNumberField" layoutX="246.0" layoutY="294.0" promptText="room number" />
-      <TextField fx:id="staffNameField" layoutX="246.0" layoutY="336.0" promptText="staff name" />
-      <Label layoutX="197.0" layoutY="215.0" text="ชื่อผู้ส่ง :">
+      <TextField fx:id="nameReceiverField" layoutX="246.0" layoutY="268.0" promptText="name receiver" />
+      <TextField fx:id="roomNumberField" layoutX="246.0" layoutY="309.0" promptText="room number" />
+      <TextField fx:id="staffNameField" layoutX="246.0" layoutY="351.0" promptText="staff name" />
+      <Label layoutX="197.0" layoutY="230.0" text="ชื่อผู้ส่ง :" textFill="#8a6557">
          <font>
             <Font name="FC Active Light Italic" size="16.0" />
          </font>
       </Label>
-      <TextField fx:id="nameSenderField" layoutX="246.0" layoutY="211.0" promptText="name sender" />
-      <Label layoutX="205.0" layoutY="377.0" text="ขนาด :">
+      <TextField fx:id="nameSenderField" layoutX="246.0" layoutY="226.0" promptText="name sender" />
+      <Label layoutX="204.0" layoutY="395.0" text="ขนาด :" textFill="#8a6557">
          <font>
             <Font name="FC Active Light Italic" size="16.0" />
          </font>
       </Label>
-      <CheckBox fx:id="choiceBoxSmall" layoutX="247.0" layoutY="375.0" mnemonicParsing="false" onAction="#setChoiceBoxSmall" text="เล็ก">
+      <CheckBox fx:id="choiceBoxSmall" layoutX="246.0" layoutY="393.0" mnemonicParsing="false" onAction="#setChoiceBoxSmall" text="เล็ก" textFill="#8a6557">
          <font>
             <Font name="FC Active Light Italic" size="16.0" />
          </font>
       </CheckBox>
-      <CheckBox fx:id="choiceBoxMedium" layoutX="303.0" layoutY="375.0" mnemonicParsing="false" onAction="#setChoiceBoxMedium" text="กลาง">
+      <CheckBox fx:id="choiceBoxMedium" layoutX="302.0" layoutY="393.0" mnemonicParsing="false" onAction="#setChoiceBoxMedium" text="กลาง" textFill="#8a6557">
          <font>
             <Font name="FC Active Light Italic" size="16.0" />
          </font>
       </CheckBox>
-      <CheckBox fx:id="choiceBoxBig" layoutX="371.0" layoutY="375.0" mnemonicParsing="false" onAction="#setChoiceBoxBig" text="ใหญ่">
+      <CheckBox fx:id="choiceBoxBig" layoutX="370.0" layoutY="393.0" mnemonicParsing="false" onAction="#setChoiceBoxBig" text="ใหญ่" textFill="#8a6557">
          <font>
             <Font name="FC Active Light Italic" size="16.0" />
          </font>

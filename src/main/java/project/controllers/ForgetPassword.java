@@ -12,12 +12,9 @@ import javafx.stage.Stage;
 import project.manageData.ManageAdminFile;
 import project.manageData.ManageGuestFile;
 import project.manageData.ManageStaffFile;
-import project.models.admin.AdminCreateAccount;
-import project.models.admin.AdminList;
-import project.models.guest.GuestCreateAccount;
-import project.models.guest.GuestList;
-import project.models.staff.StaffCreateAccount;
-import project.models.staff.StaffList;
+import project.models.AdminAccount;
+import project.models.GuestAccount;
+import project.models.StaffAccount;
 
 import java.io.IOException;
 
@@ -26,14 +23,11 @@ public class ForgetPassword {
     private String oldPassword;
     private String newPassword;
     private String confirmPassword;
-    private StaffCreateAccount staffAccount;
-    private StaffList staffList;
+    private StaffAccount staffAccount,staffList;
     private ManageStaffFile staffFile;
-    private AdminCreateAccount adminAccount;
-    private AdminList adminList;
+    private AdminAccount adminAccount,adminList;
     private ManageAdminFile adminFile;
-    private GuestCreateAccount guestAccount;
-    private GuestList guestList;
+    private GuestAccount guestAccount,guestList;
     private ManageGuestFile guestFile;
 
     @FXML private TextField usernameField;
@@ -68,10 +62,10 @@ public class ForgetPassword {
         confirmPassword = confirmPasswordField.getText();
         if (!(username.equals("")&&oldPassword.equals("")&&newPassword.equals("")&&confirmPassword.equals(""))) {
             if (newPassword.equals(confirmPassword)) {
-                if (staffList.checkHaveUsernameAndPassword(username, oldPassword) || adminList.checkAdminAccount(username, oldPassword) /*|| guestList.checkHaveUsernameAndPassword(username, oldPassword)*/) {
+                if (staffList.checkAccount(username, oldPassword) || adminList.checkAccount(username, oldPassword) || guestList.checkAccount(username, oldPassword)) {
                     Button b = (Button) event.getSource();
                     Stage stage = (Stage) b.getScene().getWindow();
-                    if (staffList.checkHaveUsernameAndPassword(username, oldPassword)) {
+                    if (staffList.checkAccount(username, oldPassword)) {
                         staffList.setPassword(username, newPassword, confirmPassword);
                         staffFile.setStaffs(staffList);
                         FXMLLoader loader = new FXMLLoader(getClass().getResource("/fxmlFile/login_staff.fxml"));
@@ -79,7 +73,7 @@ public class ForgetPassword {
                         stage.setScene(new Scene(loader.load(), 600, 600));
                         LoginStaff l = loader.getController();
                         stage.show();
-                    } else if (adminList.checkAdminAccount(username, oldPassword)) {
+                    } else if (adminList.checkAccount(username, oldPassword)) {
                         adminList.setPassword(username, newPassword, confirmPassword);
                         adminFile.setAdminList(adminList);
                         FXMLLoader loader = new FXMLLoader(getClass().getResource("/fxmlFile/login_admin.fxml"));
@@ -87,7 +81,7 @@ public class ForgetPassword {
                         stage.setScene(new Scene(loader.load(), 600, 600));
                         LoginAdmin l = loader.getController();
                         stage.show();
-                    } else if (guestList.checkHaveUsernameAndPassword(username, oldPassword)) {
+                    } else if (guestList.checkAccount(username, oldPassword)) {
                         guestList.setPassword(username, newPassword, confirmPassword);
                         guestFile.setGuestList(guestList);
                         FXMLLoader loader = new FXMLLoader(getClass().getResource("/fxmlFile/login_guest.fxml"));

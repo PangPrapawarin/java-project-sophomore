@@ -12,18 +12,16 @@ import javafx.scene.control.TableView;
 import javafx.scene.control.cell.PropertyValueFactory;
 import javafx.stage.Stage;
 import project.manageData.ManageStaffFile;
-import project.models.staff.StaffCreateAccount;
-import project.models.staff.StaffList;
+import project.models.StaffAccount;
 
 import java.io.IOException;
 
 public class LoginSuccessAdmin {
-    private StaffList staffList;
-    private StaffCreateAccount staffSelect;
+    private StaffAccount staffAccount,staffList;
     private ManageStaffFile staffFile;
 
-    @FXML private TableView<StaffCreateAccount> staffTable;
-    @FXML private TableColumn<StaffCreateAccount, String> usernameColumn,nameColumn,accessTimeColumn,withholdColumn;
+    @FXML private TableView<StaffAccount> staffTable;
+    @FXML private TableColumn<StaffAccount, String> usernameColumn,nameColumn,accessTimeColumn,withholdColumn;
     @FXML private Button newStaffAccountButton;
     @FXML private Button logoutButton;
     @FXML private Button withholdButton;
@@ -34,11 +32,11 @@ public class LoginSuccessAdmin {
         showStaffList();
     }
     private void showStaffList() {
-        ObservableList<StaffCreateAccount> staffObservableList = FXCollections.observableArrayList(staffList.getStaffs());
-        usernameColumn.setCellValueFactory(new PropertyValueFactory<StaffCreateAccount, String>("username"));
-        nameColumn.setCellValueFactory(new PropertyValueFactory<StaffCreateAccount, String>("name"));
-        accessTimeColumn.setCellValueFactory(new PropertyValueFactory<StaffCreateAccount, String>("time"));
-        withholdColumn.setCellValueFactory(new PropertyValueFactory<StaffCreateAccount, String>("withhold"));
+        ObservableList<StaffAccount> staffObservableList = FXCollections.observableArrayList(staffList.getStaffs());
+        usernameColumn.setCellValueFactory(new PropertyValueFactory<StaffAccount, String>("username"));
+        nameColumn.setCellValueFactory(new PropertyValueFactory<StaffAccount, String>("name"));
+        accessTimeColumn.setCellValueFactory(new PropertyValueFactory<StaffAccount, String>("time"));
+        withholdColumn.setCellValueFactory(new PropertyValueFactory<StaffAccount, String>("withhold"));
         staffTable.getSortOrder().addAll(accessTimeColumn);
         accessTimeColumn.setSortType(TableColumn.SortType.DESCENDING);
         staffTable.setItems(staffObservableList);
@@ -53,7 +51,7 @@ public class LoginSuccessAdmin {
         stage.show();
     }
     @FXML public void handleWithholdAction(ActionEvent event) throws IOException {
-        StaffCreateAccount staff = staffTable.getSelectionModel().getSelectedItem();
+        StaffAccount staff = staffTable.getSelectionModel().getSelectedItem();
         staffList.setWithholdStaff(staff);
         staffFile.setStaffs(staffList);
         staffTable.refresh();

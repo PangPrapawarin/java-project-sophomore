@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane prefHeight="600.0" prefWidth="600.0" style="-fx-background-color: #eeded2;" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="project.controllers.SuccessGuest">
+   <children>
+      <Label layoutX="179.0" layoutY="57.0" lineSpacing="4.0" text="จดหมาย / เอกสาร / พัสดุ&#10;ของผู้พักอาศัย" textAlignment="CENTER" textFill="#8a6557">
+         <font>
+            <Font name="Chonburi" size="20.0" />
+         </font>
+      </Label>
+      <Button fx:id="logoutButton" layoutX="531.0" layoutY="563.0" mnemonicParsing="false" onAction="#handleLogoutButton" text="ลงชื่อออก" textFill="#8a6557">
+         <font>
+            <Font name="FC Active Light Italic" size="13.0" />
+         </font>
+      </Button>
+      <Button fx:id="previousButton" layoutX="14.0" layoutY="563.0" mnemonicParsing="false" onAction="#handlePreviousButton" text="ย้อนกลับ" textFill="#8a6557">
+         <font>
+            <Font name="FC Active Light Italic" size="13.0" />
+         </font>
+      </Button>
+      <TableView fx:id="successReceiveTable" layoutX="31.0" layoutY="358.0" prefHeight="174.0" prefWidth="538.0">
+         <columns>
+            <TableColumn fx:id="nameColumn" prefWidth="137.66665649414062" text="name" />
+            <TableColumn fx:id="roomNumberColumn" prefWidth="85.66668701171875" text="room number" />
+            <TableColumn fx:id="typeColumn" minWidth="0.0" prefWidth="61.3333740234375" text="size" />
+            <TableColumn fx:id="dateColumn" prefWidth="122.0" text="date" />
+            <TableColumn fx:id="staffControlColumn" prefWidth="129.0" text="staff control" />
+         </columns>
+      </TableView>
+      <TableView fx:id="notSuccessReceiveTable" layoutX="31.0" layoutY="149.0" prefHeight="174.0" prefWidth="538.0">
+         <columns>
+            <TableColumn fx:id="nameColumnn" prefWidth="137.66665649414062" text="name" />
+            <TableColumn fx:id="roomNumberColumnn" prefWidth="85.66668701171875" text="room number" />
+            <TableColumn fx:id="typeColumnn" minWidth="0.0" prefWidth="61.3333740234375" text="size" />
+            <TableColumn fx:id="dateColumnn" prefWidth="122.6666259765625" text="date" />
+            <TableColumn fx:id="staffControlColumnn" prefWidth="128.3333740234375" text="staff control" />
+         </columns>
+      </TableView>
+      <Label layoutX="31.0" layoutY="339.0" text="จดหมาย / เอกสาร / พัสดุที่รับแล้ว" textFill="#8a6557">
+         <font>
+            <Font name="FC Active Light Italic" size="15.0" />
+         </font>
+      </Label>
+      <Label layoutX="31.0" layoutY="130.0" text="จดหมาย / เอกสาร / พัสดุที่ยังไม่ได้รับ" textFill="#8a6557">
+         <font>
+            <Font name="FC Active Light Italic" size="15.0" />
+         </font>
+      </Label>
+   </children>
+</AnchorPane>

@@ -7,19 +7,19 @@
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="600.0" prefWidth="600.0" style="-fx-background-color: #cee8f0;" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="project.controllers.SuccessReceive">
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="600.0" prefWidth="600.0" style="-fx-background-color: #eeded2;" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="project.controllers.SuccessReceive">
    <children>
-      <Label layoutX="179.0" layoutY="64.0" lineSpacing="4.0" text="จดหมาย / เอกสาร / พัสดุ&#10;ที่รับไปแล้ว" textAlignment="CENTER">
+      <Label layoutX="179.0" layoutY="64.0" lineSpacing="4.0" text="จดหมาย / เอกสาร / พัสดุ&#10;ที่รับไปแล้ว" textAlignment="CENTER" textFill="#8a6557">
          <font>
             <Font name="Chonburi" size="20.0" />
          </font>
       </Label>
-      <Button fx:id="logoutButton" layoutX="531.0" layoutY="563.0" mnemonicParsing="false" onAction="#handleLogoutButton" text="ลงชื่อออก">
+      <Button fx:id="logoutButton" layoutX="531.0" layoutY="563.0" mnemonicParsing="false" onAction="#handleLogoutButton" text="ลงชื่อออก" textFill="#8a6557">
          <font>
             <Font name="FC Active Light Italic" size="13.0" />
          </font>
       </Button>
-      <Button fx:id="previousButton" layoutX="14.0" layoutY="563.0" mnemonicParsing="false" onAction="#handlePreviousButton" text="ย้อนกลับ">
+      <Button fx:id="previousButton" layoutX="14.0" layoutY="563.0" mnemonicParsing="false" onAction="#handlePreviousButton" text="ย้อนกลับ" textFill="#8a6557">
          <font>
             <Font name="FC Active Light Italic" size="13.0" />
          </font>
@@ -28,10 +28,9 @@
          <columns>
             <TableColumn fx:id="nameColumn" prefWidth="137.66665649414062" text="name" />
             <TableColumn fx:id="roomNumberColumn" prefWidth="85.66668701171875" text="room number" />
-            <TableColumn fx:id="typeColumn" minWidth="0.0" prefWidth="61.3333740234375" text="size" />
-            <TableColumn fx:id="dateColumn" prefWidth="86.0" text="date" />
-            <TableColumn fx:id="otherColumn" minWidth="8.0" prefWidth="69.66668701171875" text="other" />
-            <TableColumn fx:id="staffControlColumn" prefWidth="95.0" text="staff control" />
+            <TableColumn fx:id="typeColumn" minWidth="0.0" prefWidth="76.66668701171875" text="type" />
+            <TableColumn fx:id="dateColumn" prefWidth="141.0" text="date" />
+            <TableColumn fx:id="staffControlColumn" prefWidth="97.0" text="staff control" />
          </columns>
       </TableView>
    </children>

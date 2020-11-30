@@ -1,39 +1,21 @@
 package project.manageData;
 
-import project.models.admin.AdminCreateAccount;
-import project.models.admin.AdminList;
+import project.models.AdminAccount;
+import project.models.GuestAccount;
 
 import java.io.*;
 
-public class ManageAdminFile {
-    private String fileName;
-    private String fileDirectoryName;
-    private AdminList adminList;
-    private AdminCreateAccount adminAccount;
+public class ManageAdminFile extends ManageStaffFile {
+    private AdminAccount adminList;
 
     public ManageAdminFile(String fileDirectoryName, String fileName) {
-        this.fileName = fileName;
-        this.fileDirectoryName = fileDirectoryName;
-        checkFileData();
+        super(fileDirectoryName, fileName);
+        super.checkFileData();
     }
 
-    public void checkFileData(){
-        File file = new File(fileDirectoryName);
-        if (!file.exists()) {
-            file.mkdirs();
-        }
-        String filePath = fileDirectoryName + File.separator + fileName;
-        file = new File(filePath);
-        if (!file.exists()) {
-            try {
-                file.createNewFile();
-            } catch (IOException e) {
-                System.err.println("Failed to create " + filePath);
-            }
-        }
-    }
+    @Override
     public void readFileData() throws IOException {
-        String filePath = fileDirectoryName + File.separator + fileName;
+        String filePath = super.getFileDirectoryName() + File.separator + super.getFileName();
         File file = new File(filePath);
         FileReader fileReader = new FileReader(file);
         BufferedReader bufferedReader = new BufferedReader(fileReader);
@@ -41,46 +23,30 @@ public class ManageAdminFile {
 
         while((line = bufferedReader.readLine()) != null){
             String[] data = line.split(",");
-            AdminCreateAccount admin = new AdminCreateAccount(data[0].trim(), data[1].trim(),data[2].trim());
-            adminList.addAdmin(admin);
+            AdminAccount admin = new AdminAccount(data[0].trim(), data[1].trim(),data[2].trim());
+            adminList.addAccount(admin);
         }
         bufferedReader.close();
     }
-    public AdminList getAdminsList() {
+    public AdminAccount getAdminsList() {
         try {
-            adminList = new AdminList();
+            adminList = new AdminAccount();
             readFileData();
         } catch (FileNotFoundException e) {
-            System.err.println(fileName + " not found.");
+            System.err.println(super.getFileName() + " not found.");
         } catch (IOException e){
-            System.err.println(fileName + " has error.");
+            System.err.println(super.getFileName() + " has error.");
         }
         return adminList;
     }
-    public void setNewPassword(AdminCreateAccount admin) {
-        String filePath = fileDirectoryName + File.separator + fileName;
+    public void setAdminList(AdminAccount adminList) {
+        String filePath = super.getFileDirectoryName() + File.separator + super.getFileName();
         File file = new File(filePath);
         FileWriter fileWriter = null;
         try {
             fileWriter = new FileWriter(file);
             BufferedWriter writer = new BufferedWriter(fileWriter);
-            String account = admin.getUsername() + "," + admin.getPassword() + "," + admin.getConfirmPassword();
-            writer.append(account);
-            writer.newLine();
-            writer.close();
-        }
-        catch (IOException e) {
-            System.err.println("Cannot write " + filePath);
-        }
-    }
-    public void setAdminList(AdminList adminList) {
-        String filePath = fileDirectoryName + File.separator + fileName;
-        File file = new File(filePath);
-        FileWriter fileWriter = null;
-        try {
-            fileWriter = new FileWriter(file);
-            BufferedWriter writer = new BufferedWriter(fileWriter);
-            for (AdminCreateAccount admin : adminList.getAdmins()) {
+            for (AdminAccount admin : adminList.getAdmins()) {
                 String line = admin.getUsername() + "," + admin.getPassword() + "," + admin.getConfirmPassword();
                 writer.append(line);
                 writer.newLine();
