@@ -1,14 +1,16 @@
 package project.manageData;
 
 import project.models.AdminAccount;
+import project.models.AdminList;
 import project.models.StaffAccount;
+import project.models.StaffList;
 
 import java.io.*;
 
 public class ManageStaffFile {
     private String fileName;
     private String fileDirectoryName;
-    private StaffAccount staffList;
+    private AdminList staffList;
 
     public ManageStaffFile(String fileDirectoryName, String fileName) {
         this.fileName = fileName;
@@ -39,14 +41,15 @@ public class ManageStaffFile {
 
         while((line = bufferedReader.readLine()) != null){
             String[] data = line.split(",");
-            StaffAccount staff = new StaffAccount(data[0].trim(), data[1].trim(),data[2].trim(),data[3].trim(),data[4].trim(),data[5].trim());
-            staffList.addAccount(staff);
+            AdminAccount staff = new StaffAccount(data[0].trim(), data[1].trim(),data[2].trim(),data[3].trim(),data[4].trim(),data[5].trim()); //polymorphism
+            staffList.addAccount(staff); //polymorphism
         }
         bufferedReader.close();
     }
-    public StaffAccount getStaffsList() {
+
+    public AdminList getList() {
         try {
-            staffList = new StaffAccount();
+            staffList = new StaffList(); //polymorphism
             readFileData();
         } catch (FileNotFoundException e) {
             System.err.println(fileName + " not found.");
@@ -55,7 +58,7 @@ public class ManageStaffFile {
         }
         return staffList;
     }
-    public void setStaffs(StaffAccount staffs) {
+    public void setStaffs(StaffList staffs) {
         String filePath = fileDirectoryName + File.separator + fileName;
         File file = new File(filePath);
         FileWriter fileWriter = null;

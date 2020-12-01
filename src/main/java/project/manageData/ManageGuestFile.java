@@ -1,12 +1,14 @@
 package project.manageData;
 
 import project.models.AdminAccount;
+import project.models.AdminList;
 import project.models.GuestAccount;
+import project.models.GuestList;
 
 import java.io.*;
 
 public class ManageGuestFile extends ManageStaffFile {
-    private GuestAccount guestList;
+    private AdminList guestList;
 
     public ManageGuestFile(String fileDirectoryName, String fileName) {
         super(fileDirectoryName, fileName);
@@ -23,14 +25,15 @@ public class ManageGuestFile extends ManageStaffFile {
 
         while((line = bufferedReader.readLine()) != null){
             String[] data = line.split(",");
-            GuestAccount guest = new GuestAccount(data[0].trim(), data[1].trim(),data[2].trim(),data[3].trim());
-            guestList.addAccount(guest);
+            AdminAccount guest = new GuestAccount(data[0].trim(), data[1].trim(),data[2].trim(),data[3].trim()); //polymorphism
+            guestList.addAccount(guest); //polymorphism
         }
         bufferedReader.close();
     }
-    public GuestAccount getGuestList() {
+    @Override
+    public AdminList getList() {
         try {
-            guestList = new GuestAccount();
+            guestList = new GuestList(); //polymorphism
             readFileData();
         } catch (FileNotFoundException e) {
             System.err.println(super.getFileName() + " not found.");
@@ -40,7 +43,7 @@ public class ManageGuestFile extends ManageStaffFile {
         return guestList;
     }
 
-    public void setGuestList(GuestAccount guests) {
+    public void setGuestList(GuestList guests) {
         String filePath = super.getFileDirectoryName() + File.separator + super.getFileName();
         File file = new File(filePath);
         FileWriter fileWriter = null;

@@ -9,16 +9,18 @@ import javafx.scene.control.Button;
 import javafx.scene.control.Label;
 import javafx.stage.Stage;
 import project.manageData.ManageGuestFile;
+import project.manageData.ManageStaffFile;
+import project.models.AdminList;
 import project.models.GuestAccount;
 
 import java.io.IOException;
 
 public class LoginSuccessGuest {
-    private GuestAccount guestList;
+    private AdminList guestList; //polymorphism
     private String nameGuest;
     private String usernameGuest;
     private LoginGuest guest;
-    private ManageGuestFile guestFile;
+    private ManageStaffFile guestFile; //polymorphism
 
     @FXML private Label username;
     @FXML private Label name;
@@ -31,7 +33,7 @@ public class LoginSuccessGuest {
             @Override
             public void run() {
                 guestFile = new ManageGuestFile("data", "guestAccount.csv");
-                guestList = guestFile.getGuestList();
+                guestList = guestFile.getList(); //polymorphism method getList()
             }
         });
     }

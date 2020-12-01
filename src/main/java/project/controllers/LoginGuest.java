@@ -11,15 +11,18 @@ import javafx.scene.control.PasswordField;
 import javafx.scene.control.TextField;
 import javafx.stage.Stage;
 import project.manageData.ManageGuestFile;
+import project.manageData.ManageStaffFile;
+import project.models.AdminList;
 import project.models.GuestAccount;
+import project.models.GuestList;
 
 import java.io.IOException;
 
 public class LoginGuest {
     private String username;
     private String password;
-    private GuestAccount guestAccount,guestList;
-    private ManageGuestFile guestData;
+    private GuestList guestList;
+    private ManageStaffFile guestData; //polymorphism
     private LoginSuccessGuest nextPage;
 
     @FXML private TextField usernameField;
@@ -35,7 +38,7 @@ public class LoginGuest {
             @Override
             public void run() {
                 guestData = new ManageGuestFile("data", "guestAccount.csv");
-                guestList = guestData.getGuestList();
+                guestList = (GuestList) guestData.getList(); //casting
             }
         });
     }
@@ -43,7 +46,7 @@ public class LoginGuest {
         username = usernameField.getText();
         password = passwordField.getText();
         if (!(username.equals("") || password.equals(""))) {
-            if (guestList.checkUsername(username)) {
+            if (guestList.checkUsername(username) && guestList.checkAccount(username,password)) { //polymorphism method checkAccount(,)
                 Button b = (Button) event.getSource();
                 Stage stage = (Stage) b.getScene().getWindow();
                 FXMLLoader loader = new FXMLLoader(getClass().getResource("/fxmlFile/login_success_guest.fxml"));

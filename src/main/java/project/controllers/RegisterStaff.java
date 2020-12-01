@@ -12,6 +12,7 @@ import javafx.stage.Stage;
 import project.manageData.ManageStaffFile;
 import project.models.AdminAccount;
 import project.models.StaffAccount;
+import project.models.StaffList;
 
 import java.io.IOException;
 
@@ -21,7 +22,7 @@ public class RegisterStaff {
     private String password;
     private String confirmPassword;
     private String time;
-    private StaffAccount staffAccount,staffList;
+    private StaffList staffList;
     private ManageStaffFile staffData;
 
     @FXML private TextField staffNameField;
@@ -34,7 +35,7 @@ public class RegisterStaff {
 
     @FXML public void initialize(){
         staffData = new ManageStaffFile("data", "staffAccount.csv");
-        staffList = staffData.getStaffsList();
+        staffList = (StaffList) staffData.getList(); //casting
     }
     @FXML public void handlePreviousButton(ActionEvent event) throws IOException {
         Button b = (Button) event.getSource();
@@ -53,8 +54,8 @@ public class RegisterStaff {
         if (!(name.equals("")||username.equals("")||password.equals("")||confirmPassword.equals(""))){
             if (password.equals(confirmPassword)){
                 if (!(staffList.checkUsername(username))) {
-                    AdminAccount staffAccount = new StaffAccount(name,username,password,confirmPassword,"allow","-");
-                    staffList.addAccount(staffAccount);
+                    AdminAccount staffAccount = new StaffAccount(name,username,password,confirmPassword,"allow","-"); //polymorphism
+                    staffList.addAccount(staffAccount); //polymorphism method addAccount()
                     staffData.setStaffs(staffList);
                     Button b = (Button) event.getSource();
                     Stage stage = (Stage) b.getScene().getWindow();

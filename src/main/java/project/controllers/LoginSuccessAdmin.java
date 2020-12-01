@@ -12,12 +12,14 @@ import javafx.scene.control.TableView;
 import javafx.scene.control.cell.PropertyValueFactory;
 import javafx.stage.Stage;
 import project.manageData.ManageStaffFile;
+import project.models.AdminList;
 import project.models.StaffAccount;
+import project.models.StaffList;
 
 import java.io.IOException;
 
 public class LoginSuccessAdmin {
-    private StaffAccount staffAccount,staffList;
+    private StaffList staffList;
     private ManageStaffFile staffFile;
 
     @FXML private TableView<StaffAccount> staffTable;
@@ -28,7 +30,7 @@ public class LoginSuccessAdmin {
 
     @FXML public void initialize(){
         staffFile = new ManageStaffFile("data", "staffAccount.csv");
-        staffList = staffFile.getStaffsList();
+        staffList = (StaffList) staffFile.getList(); //casting
         showStaffList();
     }
     private void showStaffList() {

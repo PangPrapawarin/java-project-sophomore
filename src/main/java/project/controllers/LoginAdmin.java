@@ -10,15 +10,17 @@ import javafx.scene.control.PasswordField;
 import javafx.scene.control.TextField;
 import javafx.stage.Stage;
 import project.manageData.ManageAdminFile;
+import project.manageData.ManageStaffFile;
 import project.models.AdminAccount;
+import project.models.AdminList;
 
 import java.io.IOException;
 
 public class LoginAdmin {
     private String username;
     private String password;
-    private AdminAccount adminAccount,adminList;
-    private ManageAdminFile adminData;
+    private AdminList adminList;
+    private ManageStaffFile adminData; //polymorphism
 
     @FXML private TextField usernameField;
     @FXML private PasswordField passwordField;
@@ -28,7 +30,7 @@ public class LoginAdmin {
 
     @FXML public void initialize(){
         adminData = new ManageAdminFile("data","adminAccount.csv");
-        adminList = adminData.getAdminsList();
+        adminList = adminData.getList();
     }
     @FXML public void handleLoginAdminButton(ActionEvent event) throws IOException {
         username = usernameField.getText();

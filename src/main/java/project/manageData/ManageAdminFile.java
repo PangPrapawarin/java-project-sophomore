@@ -1,12 +1,13 @@
 package project.manageData;
 
 import project.models.AdminAccount;
+import project.models.AdminList;
 import project.models.GuestAccount;
 
 import java.io.*;
 
 public class ManageAdminFile extends ManageStaffFile {
-    private AdminAccount adminList;
+    private AdminList adminList;
 
     public ManageAdminFile(String fileDirectoryName, String fileName) {
         super(fileDirectoryName, fileName);
@@ -28,9 +29,10 @@ public class ManageAdminFile extends ManageStaffFile {
         }
         bufferedReader.close();
     }
-    public AdminAccount getAdminsList() {
+    @Override
+    public AdminList getList() {
         try {
-            adminList = new AdminAccount();
+            adminList = new AdminList();
             readFileData();
         } catch (FileNotFoundException e) {
             System.err.println(super.getFileName() + " not found.");
@@ -39,7 +41,7 @@ public class ManageAdminFile extends ManageStaffFile {
         }
         return adminList;
     }
-    public void setAdminList(AdminAccount adminList) {
+    public void setAdminList(AdminList adminList) {
         String filePath = super.getFileDirectoryName() + File.separator + super.getFileName();
         File file = new File(filePath);
         FileWriter fileWriter = null;

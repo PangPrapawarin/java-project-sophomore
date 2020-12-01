@@ -9,9 +9,7 @@ import javafx.stage.Stage;
 import project.manageData.ManageNewGuestInfoFile;
 import project.manageData.ManageStaffFile;
 import project.manageData.ManageThingsFile;
-import project.models.Condo;
-import project.models.StaffAccount;
-import project.models.Thing;
+import project.models.*;
 
 import java.io.IOException;
 import java.time.LocalDateTime;
@@ -31,7 +29,7 @@ public class NewDocument {
     private ManageThingsFile documentFile;
     private Condo condo,guestInfoList;
     private ManageStaffFile staffFile;
-    private StaffAccount staffAccount,staffList;
+    private StaffList staffList;
     private ManageNewGuestInfoFile guestInfoFile;
 
     @FXML private TextField formField;
@@ -53,7 +51,7 @@ public class NewDocument {
         documentFile = new ManageThingsFile("data", "thingsList.csv");
         documentsList = documentFile.getThingsList();
         staffFile = new ManageStaffFile("data","staffAccount.csv");
-        staffList = staffFile.getStaffsList();
+        staffList = (StaffList) staffFile.getList(); //casting
         guestInfoFile = new ManageNewGuestInfoFile("data","guestInfoAccount.csv");
         guestInfoList = guestInfoFile.getGuestInfoList();
         levelImportantOption();

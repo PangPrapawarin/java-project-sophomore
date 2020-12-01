@@ -16,8 +16,7 @@ import java.io.IOException;
 
 public class DetailRoom {
     private String nameSearch;
-    private Condo guestInfo,guestInfoList;
-    private LoginStaff loginStaff;
+    private Condo guestInfoList;
     private ManageNewGuestInfoFile guestInfoFile;
     private ObservableList<Condo> guestInfoObservableList;
 

@@ -12,9 +12,7 @@ import javafx.stage.Stage;
 import project.manageData.ManageAdminFile;
 import project.manageData.ManageGuestFile;
 import project.manageData.ManageStaffFile;
-import project.models.AdminAccount;
-import project.models.GuestAccount;
-import project.models.StaffAccount;
+import project.models.*;
 
 import java.io.IOException;
 
@@ -23,11 +21,9 @@ public class ForgetPassword {
     private String oldPassword;
     private String newPassword;
     private String confirmPassword;
-    private StaffAccount staffAccount,staffList;
+    private AdminList staffList,adminList,guestList; //polymorphism
     private ManageStaffFile staffFile;
-    private AdminAccount adminAccount,adminList;
     private ManageAdminFile adminFile;
-    private GuestAccount guestAccount,guestList;
     private ManageGuestFile guestFile;
 
     @FXML private TextField usernameField;
@@ -40,11 +36,11 @@ public class ForgetPassword {
 
     @FXML public void initialize(){
         adminFile = new ManageAdminFile("data","adminAccount.csv");
-        adminList = adminFile.getAdminsList();
+        adminList = adminFile.getList(); //polymorphism method getList()
         staffFile = new ManageStaffFile("data","staffAccount.csv");
-        staffList = staffFile.getStaffsList();
+        staffList = staffFile.getList();
         guestFile = new ManageGuestFile("data","guestAccount.csv");
-        guestList = guestFile.getGuestList();
+        guestList = guestFile.getList(); //polymorphism method getList()
     }
     @FXML public void handlePreviousButton(ActionEvent event) throws IOException {
         Button b = (Button) event.getSource();
@@ -67,7 +63,7 @@ public class ForgetPassword {
                     Stage stage = (Stage) b.getScene().getWindow();
                     if (staffList.checkAccount(username, oldPassword)) {
                         staffList.setPassword(username, newPassword, confirmPassword);
-                        staffFile.setStaffs(staffList);
+                        staffFile.setStaffs((StaffList) staffList); //casting
                         FXMLLoader loader = new FXMLLoader(getClass().getResource("/fxmlFile/login_staff.fxml"));
 
                         stage.setScene(new Scene(loader.load(), 600, 600));
@@ -83,7 +79,7 @@ public class ForgetPassword {
                         stage.show();
                     } else if (guestList.checkAccount(username, oldPassword)) {
                         guestList.setPassword(username, newPassword, confirmPassword);
-                        guestFile.setGuestList(guestList);
+                        guestFile.setGuestList((GuestList) guestList); //casting
                         FXMLLoader loader = new FXMLLoader(getClass().getResource("/fxmlFile/login_guest.fxml"));
 
                         stage.setScene(new Scene(loader.load(), 600, 600));

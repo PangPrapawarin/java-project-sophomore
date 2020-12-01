@@ -11,6 +11,7 @@ import project.manageData.ManageStaffFile;
 import project.manageData.ManageThingsFile;
 import project.models.Condo;
 import project.models.StaffAccount;
+import project.models.StaffList;
 import project.models.Thing;
 
 import java.io.IOException;
@@ -31,7 +32,7 @@ public class NewSupply {
     private Thing suppliesList;
     private ManageThingsFile suppliesFile;
     private ManageStaffFile staffFile;
-    private StaffAccount staffAccount,staffList;
+    private StaffList staffList;
     private ManageNewGuestInfoFile guestInfoFile;
     private Condo condo,guestInfoList;
 
@@ -56,7 +57,7 @@ public class NewSupply {
         suppliesFile = new ManageThingsFile("data", "thingsList.csv");
         suppliesList = suppliesFile.getThingsList();
         staffFile = new ManageStaffFile("data","staffAccount.csv");
-        staffList = staffFile.getStaffsList();
+        staffList = (StaffList) staffFile.getList(); //casting
         guestInfoFile = new ManageNewGuestInfoFile("data","guestInfoAccount.csv");
         guestInfoList = guestInfoFile.getGuestInfoList();
     }

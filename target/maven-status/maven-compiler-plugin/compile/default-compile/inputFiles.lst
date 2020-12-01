@@ -7,6 +7,7 @@ C:\Users\Pang\IdeaProjects\project-6210450610\src\main\java\project\manageData\M
 C:\Users\Pang\IdeaProjects\project-6210450610\src\main\java\project\controllers\LoginSuccessAdmin.java
 C:\Users\Pang\IdeaProjects\project-6210450610\src\main\java\project\controllers\NewMail.java
 C:\Users\Pang\IdeaProjects\project-6210450610\src\main\java\project\models\Thing.java
+C:\Users\Pang\IdeaProjects\project-6210450610\src\main\java\project\models\AdminList.java
 C:\Users\Pang\IdeaProjects\project-6210450610\src\main\java\project\controllers\DetailRoom.java
 C:\Users\Pang\IdeaProjects\project-6210450610\src\main\java\project\controllers\LoginStaff.java
 C:\Users\Pang\IdeaProjects\project-6210450610\src\main\java\project\manageData\ManageAdminFile.java
@@ -17,7 +18,9 @@ C:\Users\Pang\IdeaProjects\project-6210450610\src\main\java\project\controllers\
 C:\Users\Pang\IdeaProjects\project-6210450610\src\main\java\project\manageData\ManageGuestFile.java
 C:\Users\Pang\IdeaProjects\project-6210450610\src\main\java\project\controllers\NewSupply.java
 C:\Users\Pang\IdeaProjects\project-6210450610\src\main\java\project\manageData\ManageStaffFile.java
+C:\Users\Pang\IdeaProjects\project-6210450610\src\main\java\project\models\StaffList.java
 C:\Users\Pang\IdeaProjects\project-6210450610\src\main\java\project\controllers\ForgetPassword.java
+C:\Users\Pang\IdeaProjects\project-6210450610\src\main\java\project\models\GuestList.java
 C:\Users\Pang\IdeaProjects\project-6210450610\src\main\java\project\controllers\NewDocument.java
 C:\Users\Pang\IdeaProjects\project-6210450610\src\main\java\project\models\GuestAccount.java
 C:\Users\Pang\IdeaProjects\project-6210450610\src\main\java\project\models\AdminAccount.java

@@ -10,7 +10,9 @@ import javafx.scene.control.PasswordField;
 import javafx.scene.control.TextField;
 import javafx.stage.Stage;
 import project.manageData.ManageStaffFile;
+import project.models.AdminList;
 import project.models.StaffAccount;
+import project.models.StaffList;
 
 import java.io.IOException;
 import java.time.LocalDateTime;
@@ -19,7 +21,7 @@ import java.time.format.DateTimeFormatter;
 public class LoginStaff {
     private String username;
     private String password;
-    private StaffAccount staffAccount,staffList;
+    private StaffList staffList;
     private LocalDateTime localDateTime = LocalDateTime.now();
     private DateTimeFormatter dateTimeFormatter = DateTimeFormatter.ofPattern("dd/MM/yyyy HH:mm:ss");
     private ManageStaffFile staffData;
@@ -35,13 +37,13 @@ public class LoginStaff {
     }
     @FXML public void initialize(){
         staffData = new ManageStaffFile("data", "staffAccount.csv");
-        staffList = staffData.getStaffsList();
+        staffList = (StaffList) staffData.getList(); //casting
     }
     @FXML public void handleLoginStaffButton(ActionEvent event) throws IOException {
         username = usernameField.getText();
         password = passwordField.getText();
         if (!(username.equals("")||password.equals(""))) {
-            if (staffList.checkAccount(username,password)) {
+            if (staffList.checkAccount(username,password)) { //polymorphism method checkAccount(,)
                 if (staffList.checkUsernameStaffWhenLogin(username)) {
                     staffList.setTimeStaff(username,localDateTime.format(dateTimeFormatter));
                     staffData.setStaffs(staffList);

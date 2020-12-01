@@ -11,9 +11,8 @@ import javafx.scene.control.TextField;
 import javafx.stage.Stage;
 import project.manageData.ManageGuestFile;
 import project.manageData.ManageNewGuestInfoFile;
-import project.models.AdminAccount;
-import project.models.GuestAccount;
-import project.models.Condo;
+import project.manageData.ManageStaffFile;
+import project.models.*;
 
 import java.io.IOException;
 
@@ -22,9 +21,9 @@ public class RegisterGuest {
     private String username;
     private String password;
     private String confirmPassword;
-    private GuestAccount guestAccount,guestList;
+    private GuestList guestList;
     private ManageGuestFile guestFile;
-    private Condo condo,guestInfoList;
+    private Condo guestInfoList;
     private ManageNewGuestInfoFile guestInfoFile;
 
     @FXML private TextField nameField;
@@ -39,7 +38,7 @@ public class RegisterGuest {
         guestInfoFile = new ManageNewGuestInfoFile("data", "guestInfoAccount.csv");
         guestInfoList = guestInfoFile.getGuestInfoList();
         guestFile = new ManageGuestFile("data","guestAccount.csv");
-        guestList = guestFile.getGuestList();
+        guestList = (GuestList) guestFile.getList(); //casting
     }
     @FXML public void handlePreviousButton(ActionEvent event) throws IOException {
         Button b = (Button) event.getSource();
@@ -59,8 +58,8 @@ public class RegisterGuest {
             if (password.equals(confirmPassword)) {
                 if (guestInfoList.checkHaveNameGuest(name)) {
                     if (!(guestList.checkUsername(username))) {
-                        AdminAccount guestAccount = new GuestAccount(name, username, password, confirmPassword);
-                        guestList.addAccount(guestAccount);
+                        AdminAccount guestAccount = new GuestAccount(name, username, password, confirmPassword); //polymorphism
+                        guestList.addAccount(guestAccount); //polymorphism method addAccount()
                         guestFile.setGuestList(guestList);
                         Button b = (Button) event.getSource();
                         Stage stage = (Stage) b.getScene().getWindow();

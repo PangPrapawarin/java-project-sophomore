@@ -8,12 +8,13 @@ import javafx.scene.control.Button;
 import javafx.scene.control.Label;
 import javafx.stage.Stage;
 import project.manageData.ManageStaffFile;
+import project.models.AdminList;
 import project.models.StaffAccount;
 
 import java.io.IOException;
 
 public class LoginSuccessStaff {
-    private StaffAccount staffList;
+    private AdminList staffList; //polymorphism
     private ManageStaffFile staffData;
 
     @FXML private Label username;
@@ -24,7 +25,7 @@ public class LoginSuccessStaff {
 
     @FXML public void initialize() throws IOException{
         staffData = new ManageStaffFile("data", "staffAccount.csv");
-        staffList = staffData.getStaffsList();
+        staffList = staffData.getList();
     }
     @FXML public void setNameStaff(String usernameText, String nameText) throws IOException {
         username.setText(usernameText);

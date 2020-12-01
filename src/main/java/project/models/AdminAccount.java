@@ -6,7 +6,6 @@ public class AdminAccount {
     private String username;
     private String password;
     private String confirmPassword;
-    private ArrayList<AdminAccount> admins;
 
     public AdminAccount(String username, String password, String confirmPassword) {
         this.username = username;
@@ -21,28 +20,6 @@ public class AdminAccount {
         }
         return false;
     }
-    public AdminAccount() {
-        admins = new ArrayList<>();
-    }
-    public void addAccount(Object object){
-        AdminAccount admin = (AdminAccount) object;
-        admins.add(admin);
-    }
-    public void setPassword(String username, String password, String confirmPassword) {
-        for (AdminAccount admin : admins) {
-            if (username.equals(admin.getUsername())) {
-                admin.setNewPassword(password, confirmPassword);
-            }
-        }
-    }
-    public boolean checkAccount(String username, String password) {
-        for (AdminAccount admin : admins) {
-            if (username.equals(admin.getUsername())&&password.equals(admin.getPassword())) {
-                return true;
-            }
-        }
-        return false;
-    }
     public String getUsername() {
         return username;
     }
@@ -52,9 +29,5 @@ public class AdminAccount {
 
     public String getConfirmPassword() {
         return confirmPassword;
-    }
-
-    public ArrayList<AdminAccount> getAdmins() {
-        return admins;
     }
 }

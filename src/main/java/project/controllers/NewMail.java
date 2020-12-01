@@ -11,6 +11,7 @@ import project.manageData.ManageStaffFile;
 import project.manageData.ManageThingsFile;
 import project.models.Condo;
 import project.models.StaffAccount;
+import project.models.StaffList;
 import project.models.Thing;
 
 import java.io.IOException;
@@ -29,7 +30,7 @@ public class NewMail {
     private Thing thingsList;
     private ManageThingsFile mailsFile;
     private ManageStaffFile staffFile;
-    private StaffAccount staffAccount,staffList;
+    private StaffList staffList;
     private ManageNewGuestInfoFile guestInfoFile;
     private Condo condo,guestInfoList;
 
@@ -51,7 +52,7 @@ public class NewMail {
         mailsFile = new ManageThingsFile("data", "thingsList.csv");
         thingsList = mailsFile.getThingsList();
         staffFile = new ManageStaffFile("data","staffAccount.csv");
-        staffList = staffFile.getStaffsList();
+        staffList = (StaffList) staffFile.getList(); //casting
         guestInfoFile = new ManageNewGuestInfoFile("data","guestInfoAccount.csv");
         guestInfoList = guestInfoFile.getGuestInfoList();
     }
