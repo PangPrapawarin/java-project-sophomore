@@ -12,6 +12,7 @@ import javafx.scene.control.TableView;
 import javafx.scene.control.cell.PropertyValueFactory;
 import javafx.stage.Stage;
 import project.manageData.ManageStaffFile;
+import project.models.AdminAccount;
 import project.models.AdminList;
 import project.models.StaffAccount;
 import project.models.StaffList;
@@ -22,8 +23,8 @@ public class LoginSuccessAdmin {
     private StaffList staffList;
     private ManageStaffFile staffFile;
 
-    @FXML private TableView<StaffAccount> staffTable;
-    @FXML private TableColumn<StaffAccount, String> usernameColumn,nameColumn,accessTimeColumn,withholdColumn;
+    @FXML private TableView<AdminAccount> staffTable;
+    @FXML private TableColumn<AdminAccount, String> usernameColumn,nameColumn,accessTimeColumn,withholdColumn;
     @FXML private Button newStaffAccountButton;
     @FXML private Button logoutButton;
     @FXML private Button withholdButton;
@@ -34,11 +35,11 @@ public class LoginSuccessAdmin {
         showStaffList();
     }
     private void showStaffList() {
-        ObservableList<StaffAccount> staffObservableList = FXCollections.observableArrayList(staffList.getStaffs());
-        usernameColumn.setCellValueFactory(new PropertyValueFactory<StaffAccount, String>("username"));
-        nameColumn.setCellValueFactory(new PropertyValueFactory<StaffAccount, String>("name"));
-        accessTimeColumn.setCellValueFactory(new PropertyValueFactory<StaffAccount, String>("time"));
-        withholdColumn.setCellValueFactory(new PropertyValueFactory<StaffAccount, String>("withhold"));
+        ObservableList<AdminAccount> staffObservableList = FXCollections.observableArrayList(staffList.getAccountList());
+        usernameColumn.setCellValueFactory(new PropertyValueFactory<AdminAccount, String>("username"));
+        nameColumn.setCellValueFactory(new PropertyValueFactory<AdminAccount, String>("name"));
+        accessTimeColumn.setCellValueFactory(new PropertyValueFactory<AdminAccount, String>("time"));
+        withholdColumn.setCellValueFactory(new PropertyValueFactory<AdminAccount, String>("withhold"));
         staffTable.getSortOrder().addAll(accessTimeColumn);
         accessTimeColumn.setSortType(TableColumn.SortType.DESCENDING);
         staffTable.setItems(staffObservableList);
@@ -53,8 +54,8 @@ public class LoginSuccessAdmin {
         stage.show();
     }
     @FXML public void handleWithholdAction(ActionEvent event) throws IOException {
-        StaffAccount staff = staffTable.getSelectionModel().getSelectedItem();
-        staffList.setWithholdStaff(staff);
+        AdminAccount staff = staffTable.getSelectionModel().getSelectedItem();
+        staffList.setWithholdStaff((StaffAccount) staff);
         staffFile.setStaffs(staffList);
         staffTable.refresh();
         staffTable.getSelectionModel().clearSelection();

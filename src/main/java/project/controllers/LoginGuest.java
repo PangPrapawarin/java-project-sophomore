@@ -22,7 +22,7 @@ public class LoginGuest {
     private String username;
     private String password;
     private GuestList guestList;
-    private ManageStaffFile guestData; //polymorphism
+    private ManageStaffFile guestData;
     private LoginSuccessGuest nextPage;
 
     @FXML private TextField usernameField;

@@ -65,7 +65,7 @@ public class ManageStaffFile {
         try {
             fileWriter = new FileWriter(file);
             BufferedWriter writer = new BufferedWriter(fileWriter);
-            for (StaffAccount staff : staffs.getStaffs()) {
+            for (AdminAccount staff : staffs.getAccountList()) {
                 String line = staff.getName() + "," + staff.getUsername() + "," + staff.getPassword() + "," + staff.getConfirmPassword() + "," + staff.getWithhold() + "," + staff.getTime();
                 writer.append(line);
                 writer.newLine();

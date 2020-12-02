@@ -30,4 +30,19 @@ public class AdminAccount {
     public String getConfirmPassword() {
         return confirmPassword;
     }
+
+    public String getWithhold() {
+        return null;
+    }
+
+    public String getName() {
+        return null;
+    }
+
+    public void setTime(String time) {
+    }
+
+    public String getTime() {
+        return null;
+    }
 }

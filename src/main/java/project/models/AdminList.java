@@ -4,12 +4,12 @@ import java.util.ArrayList;
 
 public class AdminList {
     private ArrayList<AdminAccount> admins;
+    private AdminAccount adminAccount;
 
     public AdminList() {
         admins = new ArrayList<>();
     }
-    public void addAccount(Object object){
-        AdminAccount admin = (AdminAccount) object;
+    public void addAccount(AdminAccount admin){
         admins.add(admin);
     }
     public void setPassword(String username, String password, String confirmPassword) {
@@ -27,7 +27,12 @@ public class AdminList {
         }
         return false;
     }
-    public ArrayList<AdminAccount> getAdmins() {
+
+    public AdminAccount getAccount() {
+        return adminAccount;
+    }
+
+    public ArrayList<AdminAccount> getAccountList() {
         return admins;
     }
 }

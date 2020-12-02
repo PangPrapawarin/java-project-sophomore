@@ -23,7 +23,7 @@ public class LoginStaff {
     private String password;
     private StaffList staffList;
     private LocalDateTime localDateTime = LocalDateTime.now();
-    private DateTimeFormatter dateTimeFormatter = DateTimeFormatter.ofPattern("dd/MM/yyyy HH:mm:ss");
+    private DateTimeFormatter dateTimeFormatter = DateTimeFormatter.ofPattern("yyyy/MM/dd HH:mm:ss");
     private ManageStaffFile staffData;
 
     @FXML private TextField usernameField;

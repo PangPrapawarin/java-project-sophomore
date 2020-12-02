@@ -2,7 +2,6 @@ package project.manageData;
 
 import project.models.AdminAccount;
 import project.models.AdminList;
-import project.models.GuestAccount;
 
 import java.io.*;
 
@@ -48,7 +47,7 @@ public class ManageAdminFile extends ManageStaffFile {
         try {
             fileWriter = new FileWriter(file);
             BufferedWriter writer = new BufferedWriter(fileWriter);
-            for (AdminAccount admin : adminList.getAdmins()) {
+            for (AdminAccount admin : adminList.getAccountList()) {
                 String line = admin.getUsername() + "," + admin.getPassword() + "," + admin.getConfirmPassword();
                 writer.append(line);
                 writer.newLine();

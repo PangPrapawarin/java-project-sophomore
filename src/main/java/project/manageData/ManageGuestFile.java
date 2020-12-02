@@ -50,7 +50,7 @@ public class ManageGuestFile extends ManageStaffFile {
         try {
             fileWriter = new FileWriter(file);
             BufferedWriter writer = new BufferedWriter(fileWriter);
-            for (GuestAccount guest : guests.getGuests()) {
+            for (AdminAccount guest : guests.getAccountList()) {
                 String line = guest.getName() + "," + guest.getUsername() + "," + guest.getPassword() + "," + guest.getConfirmPassword();
                 writer.append(line);
                 writer.newLine();
