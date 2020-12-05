@@ -11,6 +11,7 @@ import javafx.scene.control.TextField;
 import javafx.stage.Stage;
 import project.manageData.ManageStaffFile;
 import project.models.AdminAccount;
+import project.models.AdminList;
 import project.models.StaffAccount;
 import project.models.StaffList;
 
@@ -22,7 +23,7 @@ public class RegisterStaff {
     private String password;
     private String confirmPassword;
     private String time;
-    private StaffList staffList;
+    private AdminList staffList;
     private ManageStaffFile staffData;
 
     @FXML private TextField staffNameField;

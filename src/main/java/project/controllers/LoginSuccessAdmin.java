@@ -20,7 +20,7 @@ import project.models.StaffList;
 import java.io.IOException;
 
 public class LoginSuccessAdmin {
-    private StaffList staffList;
+    private AdminList staffList;
     private ManageStaffFile staffFile;
 
     @FXML private TableView<AdminAccount> staffTable;

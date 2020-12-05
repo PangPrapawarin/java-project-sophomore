@@ -9,10 +9,7 @@ import javafx.stage.Stage;
 import project.manageData.ManageNewGuestInfoFile;
 import project.manageData.ManageStaffFile;
 import project.manageData.ManageThingsFile;
-import project.models.Condo;
-import project.models.StaffAccount;
-import project.models.StaffList;
-import project.models.Thing;
+import project.models.*;
 
 import java.io.IOException;
 import java.time.LocalDateTime;
@@ -29,10 +26,10 @@ public class NewSupply {
     private String size;
     private LocalDateTime localDateTime = LocalDateTime.now();
     private DateTimeFormatter dateTimeFormatter = DateTimeFormatter.ofPattern("dd/MM/yyyy HH:mm:ss");
-    private Thing suppliesList;
+    private ThingList suppliesList;
     private ManageThingsFile suppliesFile;
     private ManageStaffFile staffFile;
-    private StaffList staffList;
+    private AdminList staffList;
     private ManageNewGuestInfoFile guestInfoFile;
     private Condo condo,guestInfoList;
 
@@ -95,7 +92,7 @@ public class NewSupply {
                 if (guestInfoList.checkHaveRoom(roomNumber)) {
                     if (guestInfoList.checkHaveNameGuest(nameReceiver)) {
                         if (staffList.checkHaveNameStaff(staffName)) {
-                            Thing supply = new Thing("พัสดุ", form, nameSender, nameReceiver, roomNumber, localDateTime.format(dateTimeFormatter), staffName, size, companyName, trackingNumber, "-");
+                            Thing supply = new Thing("supply", form, nameSender, nameReceiver, roomNumber, localDateTime.format(dateTimeFormatter), staffName, size, companyName, trackingNumber, "-");
                             suppliesList.addThing(supply);
                             suppliesFile.setThingsList(suppliesList);
                             Button b = (Button) event.getSource();

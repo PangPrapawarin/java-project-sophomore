@@ -13,11 +13,12 @@ import javafx.scene.control.cell.PropertyValueFactory;
 import javafx.stage.Stage;
 import project.manageData.ManageThingsFile;
 import project.models.Thing;
+import project.models.ThingList;
 
 import java.io.IOException;
 
 public class SuccessReceive {
-    private Thing thing,successThingsList;
+    private ThingList successThingsList;
     private ManageThingsFile successThingsFile;
 
     @FXML private TableColumn<Thing, String> nameColumn,roomNumberColumn,typeColumn,dateColumn,staffControlColumn;

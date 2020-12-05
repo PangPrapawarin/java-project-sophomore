@@ -43,7 +43,7 @@ public class ManageGuestFile extends ManageStaffFile {
         return guestList;
     }
 
-    public void setGuestList(GuestList guests) {
+    public void setGuestList(AdminList guests) {
         String filePath = super.getFileDirectoryName() + File.separator + super.getFileName();
         File file = new File(filePath);
         FileWriter fileWriter = null;

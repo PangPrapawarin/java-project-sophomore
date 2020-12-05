@@ -42,9 +42,9 @@ public class NewGuest {
     }
     private void roomTypeOption() {
         String[] options = {
-                "1 ห้องนอน 1 ห้องน้ำ",
-                "2 ห้องนอน 1 ห้องน้ำ",
-                "2 ห้องนอน 2 ห้องน้ำ",
+                "1 bedroom 1 bathroom",
+                "2 bedroom 1 bathroom",
+                "2 bedroom 2 bathroom",
         };
         for (int i = 0; i < options.length; i++) {
             roomType.getItems().add(options[i]);

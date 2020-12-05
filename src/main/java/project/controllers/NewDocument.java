@@ -25,11 +25,11 @@ public class NewDocument {
     private LocalDateTime localDateTime = LocalDateTime.now();
     private DateTimeFormatter dateTimeFormatter = DateTimeFormatter.ofPattern("dd/MM/yyyy HH:mm:ss");
     private String levelImportant;
-    private Thing documentsList;
+    private ThingList documentsList;
     private ManageThingsFile documentFile;
-    private Condo condo,guestInfoList;
+    private Condo guestInfoList;
     private ManageStaffFile staffFile;
-    private StaffList staffList;
+    private AdminList staffList;
     private ManageNewGuestInfoFile guestInfoFile;
 
     @FXML private TextField formField;
@@ -111,7 +111,7 @@ public class NewDocument {
                 if (guestInfoList.checkHaveRoom(roomNumber)) {
                     if (guestInfoList.checkHaveNameGuest(nameReceiver)) {
                         if (staffList.checkHaveNameStaff(staffName)) {
-                            Thing document = new Thing("เอกสาร", form, nameSender, nameReceiver, roomNumber, localDateTime.format(dateTimeFormatter), staffName, size, "-", "-", levelImportant);
+                            Thing document = new Thing("document", form, nameSender, nameReceiver, roomNumber, localDateTime.format(dateTimeFormatter), staffName, size, "-", "-", levelImportant);
                             documentsList.addThing(document);
                             documentFile.setThingsList(documentsList);
                             Button b = (Button) event.getSource();

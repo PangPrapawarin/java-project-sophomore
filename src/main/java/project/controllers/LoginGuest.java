@@ -21,7 +21,7 @@ import java.io.IOException;
 public class LoginGuest {
     private String username;
     private String password;
-    private GuestList guestList;
+    private AdminList guestList;
     private ManageStaffFile guestData;
     private LoginSuccessGuest nextPage;
 

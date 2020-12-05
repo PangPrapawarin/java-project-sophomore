@@ -58,7 +58,7 @@ public class ManageStaffFile {
         }
         return staffList;
     }
-    public void setStaffs(StaffList staffs) {
+    public void setStaffs(AdminList staffs) {
         String filePath = fileDirectoryName + File.separator + fileName;
         File file = new File(filePath);
         FileWriter fileWriter = null;

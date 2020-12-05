@@ -1,11 +1,12 @@
 package project.manageData;
 
 import project.models.Thing;
+import project.models.ThingList;
 
 import java.io.*;
 
 public class ManageThingsFile extends ManageStaffFile {
-    private Thing thingsList;
+    private ThingList thingsList;
 
     public ManageThingsFile(String fileDirectoryName, String fileName) {
         super(fileDirectoryName, fileName);
@@ -27,9 +28,9 @@ public class ManageThingsFile extends ManageStaffFile {
         }
         bufferedReader.close();
     }
-    public Thing getThingsList() {
+    public ThingList getThingsList() {
         try {
-            thingsList = new Thing();
+            thingsList = new ThingList();
             readFileData();
         } catch (FileNotFoundException e) {
             System.err.println(super.getFileName() + " not found.");
@@ -39,14 +40,14 @@ public class ManageThingsFile extends ManageStaffFile {
         return thingsList;
     }
 
-    public void setThingsList(Thing things) {
+    public void setThingsList(ThingList things) {
         String filePath = super.getFileDirectoryName() + File.separator + super.getFileName();
         File file = new File(filePath);
         FileWriter fileWriter = null;
         try {
             fileWriter = new FileWriter(file);
             BufferedWriter writer = new BufferedWriter(fileWriter);
-            for (Thing th : things.getThings()) {
+            for (Thing th : thingsList.getThings()) {
                 String line = th.getType() + "," + th.getFrom() + "," + th.getNameSender() + "," + th.getNameReceiver() + "," + th.getRoomNumber() + "," + th.getDate() + "," + th.getStaffName() + "," + th.getSize() + "," + th.getService() + "," + th.getTrackingNumber() + "," + th.getImportant();
                 writer.append(line);
                 writer.newLine();

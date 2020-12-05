@@ -9,10 +9,7 @@ import javafx.stage.Stage;
 import project.manageData.ManageNewGuestInfoFile;
 import project.manageData.ManageStaffFile;
 import project.manageData.ManageThingsFile;
-import project.models.Condo;
-import project.models.StaffAccount;
-import project.models.StaffList;
-import project.models.Thing;
+import project.models.*;
 
 import java.io.IOException;
 import java.time.LocalDateTime;
@@ -27,10 +24,10 @@ public class NewMail {
     private String size;
     private LocalDateTime localDateTime = LocalDateTime.now();
     private DateTimeFormatter dateTimeFormatter = DateTimeFormatter.ofPattern("dd/MM/yyyy HH:mm:ss");
-    private Thing thingsList;
+    private ThingList thingsList;
     private ManageThingsFile mailsFile;
     private ManageStaffFile staffFile;
-    private StaffList staffList;
+    private AdminList staffList;
     private ManageNewGuestInfoFile guestInfoFile;
     private Condo condo,guestInfoList;
 
@@ -88,7 +85,7 @@ public class NewMail {
                 if (guestInfoList.checkHaveRoom(roomNumber)) {
                     if (guestInfoList.checkHaveNameGuest(nameReceiver)) {
                         if (staffList.checkHaveNameStaff(staffName)) {
-                            Thing mail = new Thing("จดหมาย", form, nameSender, nameReceiver, roomNumber,localDateTime.format(dateTimeFormatter), staffName, size, "-", "-", "-");
+                            Thing mail = new Thing("mail", form, nameSender, nameReceiver, roomNumber,localDateTime.format(dateTimeFormatter), staffName, size, "-", "-", "-");
                             thingsList.addThing(mail);
                             mailsFile.setThingsList(thingsList);
                             Button b = (Button) event.getSource();

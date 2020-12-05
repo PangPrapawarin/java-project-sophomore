@@ -13,6 +13,7 @@ import javafx.scene.control.cell.PropertyValueFactory;
 import javafx.stage.Stage;
 import project.manageData.ManageThingsFile;
 import project.models.Thing;
+import project.models.ThingList;
 
 import java.io.IOException;
 import java.time.LocalDateTime;
@@ -21,7 +22,7 @@ import java.time.format.DateTimeFormatter;
 public class Manage {
     private String sortBy;
     private ManageThingsFile thingsFile,successThingsFile;
-    private Thing thing,thingsList,successThingsList;
+    private ThingList thingsList,successThingsList;
     private LocalDateTime localDateTime = LocalDateTime.now();
     private DateTimeFormatter dateTimeFormatter = DateTimeFormatter.ofPattern("dd/MM/yyyy HH:mm:ss");
 

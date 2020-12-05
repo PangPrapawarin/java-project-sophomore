@@ -107,17 +107,17 @@ public class Condo {
     }
     public boolean checkRoomTypeGuest(String room, String people) {
         int i = Integer.parseInt(people);
-        if (room.equals("1 ห้องนอน 1 ห้องน้ำ")) {
+        if (room.equals("1 bedroom 1 bathroom")) {
             if (i > 0 && i <= 2) {
                 return true;
             }
             return false;
-        } else if (room.equals("2 ห้องนอน 1 ห้องน้ำ")) {
+        } else if (room.equals("2 bedroom 1 bathroom")) {
             if (i > 0 && i <= 3) {
                 return true;
             }
             return false;
-        } else if (room.equals("2 ห้องนอน 2 ห้องน้ำ")) {
+        } else if (room.equals("2 bedroom 2 bathroom")) {
             if (i > 0 && i <= 4) {
                 return true;
             }

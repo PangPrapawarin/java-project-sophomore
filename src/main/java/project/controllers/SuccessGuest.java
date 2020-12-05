@@ -14,12 +14,13 @@ import javafx.scene.control.cell.PropertyValueFactory;
 import javafx.stage.Stage;
 import project.manageData.ManageThingsFile;
 import project.models.Thing;
+import project.models.ThingList;
 
 import java.io.IOException;
 
 public class SuccessGuest {
     private String nameGuest;
-    private Thing thing,successThingsList,notSuccessThingsList;
+    private ThingList successThingsList,notSuccessThingsList;
     private ManageThingsFile successThingsFile,notSuccessThingsFile;
 
     @FXML

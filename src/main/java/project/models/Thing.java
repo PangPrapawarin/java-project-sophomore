@@ -14,7 +14,6 @@ public class Thing {
     private String service;
     private String trackingNumber;
     private String important;
-    private ArrayList<Thing> things, selectThings;
 
     public Thing(String type, String from, String nameSender, String nameReceiver, String roomNumber, String date, String staffName, String size, String service, String trackingNumber, String important) {
         this.type = type;
@@ -28,15 +27,6 @@ public class Thing {
         this.service = service;
         this.trackingNumber = trackingNumber;
         this.important = important;
-    }
-
-    public Thing() {
-        things = new ArrayList<>();
-        selectThings = new ArrayList<>();
-    }
-
-    public void addThing(Thing thing) {
-        things.add(thing);
     }
 
     public String getType() {
@@ -83,32 +73,7 @@ public class Thing {
         return size;
     }
 
-    public void removeThing(Thing thing) {
-        things.remove(thing);
-    }
-
     public void setDate(String time) {
         date = time;
-    }
-
-    public ArrayList<Thing> getThings() {
-        return things;
-    }
-
-    public ArrayList<Thing> showGuestThings(String name) {
-        for (Thing thing : things) {
-            if (thing.getNameReceiver().toLowerCase().equals(name.toLowerCase())) {
-                return selectThings;
-            }
-        }
-        return null;
-    }
-
-    public void addThingGuest(String name) {
-        for (Thing thing : things) {
-            if (thing.getNameReceiver().toLowerCase().equals(name.toLowerCase())) {
-                selectThings.add(thing);
-            }
-        }
     }
 }

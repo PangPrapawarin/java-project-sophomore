@@ -21,7 +21,7 @@ public class RegisterGuest {
     private String username;
     private String password;
     private String confirmPassword;
-    private GuestList guestList;
+    private AdminList guestList;
     private ManageGuestFile guestFile;
     private Condo guestInfoList;
     private ManageNewGuestInfoFile guestInfoFile;
@@ -38,7 +38,7 @@ public class RegisterGuest {
         guestInfoFile = new ManageNewGuestInfoFile("data", "guestInfoAccount.csv");
         guestInfoList = guestInfoFile.getGuestInfoList();
         guestFile = new ManageGuestFile("data","guestAccount.csv");
-        guestList = (GuestList) guestFile.getList(); //casting
+        guestList = guestFile.getList(); //casting
     }
     @FXML public void handlePreviousButton(ActionEvent event) throws IOException {
         Button b = (Button) event.getSource();

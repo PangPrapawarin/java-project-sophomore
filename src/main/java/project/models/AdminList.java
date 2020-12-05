@@ -35,4 +35,26 @@ public class AdminList {
     public ArrayList<AdminAccount> getAccountList() {
         return admins;
     }
+
+    public boolean checkUsername(String username) {
+        return false;
+    }
+
+    public String getName(String username) {
+        return null;
+    }
+
+    public boolean checkUsernameStaffWhenLogin(String username) {
+        return false;
+    }
+
+    public void setTimeStaff(String username, String format) {
+    }
+
+    public void setWithholdStaff(StaffAccount staff) {
+    }
+
+    public boolean checkHaveNameStaff(String staffName) {
+        return false;
+    }
 }

@@ -21,7 +21,7 @@ import java.time.format.DateTimeFormatter;
 public class LoginStaff {
     private String username;
     private String password;
-    private StaffList staffList;
+    private AdminList staffList;
     private LocalDateTime localDateTime = LocalDateTime.now();
     private DateTimeFormatter dateTimeFormatter = DateTimeFormatter.ofPattern("yyyy/MM/dd HH:mm:ss");
     private ManageStaffFile staffData;

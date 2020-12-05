@@ -3,11 +3,6 @@ package project.models;
 import java.util.ArrayList;
 
 public class GuestList extends AdminList{
-//    private ArrayList<GuestAccount> guests;
-//
-//    public GuestList() {
-//        guests = new ArrayList<>();
-//    }
     public boolean checkUsername(String username) {
         for (AdminAccount guest : super.getAccountList()) {
             if (username.equals(guest.getUsername())) {
